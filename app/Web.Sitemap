@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode title="^SiteHome^Home^SiteHome^" description="" url="~/index.html">
+    <siteMapNode title="^HomePath^Home^HomePath^" description="^HomeDesc^Application home page^HomeDesc^" url="~/pages/home" cssClass="Wide" />
+    <siteMapNode title="Branch" description="View Branch" url="~/pages/branch" />
+    <siteMapNode title="User" description="View User" url="~/pages/user" />
+    <siteMapNode title="Historydbo Branch" description="View Historydbo Branch" url="~/pages/historydbo-branch" />
+    <siteMapNode title="Historydbo Account" description="View Historydbo Account" url="~/pages/historydbo-account" />
+    <siteMapNode title="Historydbo Role" description="View Historydbo Role" url="~/pages/historydbo-role" />
+    <siteMapNode title="Historydbo Site Content" description="View Historydbo Site Content" url="~/pages/historydbo-site-content" />
+    <siteMapNode title="Historydbo User" description="View Historydbo User" url="~/pages/historydbo-user" />
+    <siteMapNode title="Historydbo User Role" description="View Historydbo User Role" url="~/pages/historydbo-user-role" />
+    <siteMapNode title="Account" description="View Account" url="~/pages/account" />
+    <siteMapNode title="Site Content" description="View Site Content" url="~/pages/site-content" roles="Administrators, Content Editors, Developers" />
+    <siteMapNode title="System" description="" roles="*">
+      <siteMapNode title="User Role" description="View User Role" url="~/pages/user-role" />
+      <siteMapNode title="Role" description="View Role" url="~/pages/role" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

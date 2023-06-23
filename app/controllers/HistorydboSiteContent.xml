@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="HistorydboSiteContent" conflictDetection="overwriteChanges" label="Historydbo Site Content" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"SiteContent"."SiteContentID" "SiteContentID"
+	,"SiteContent"."FileName" "FileName"
+	,"SiteContent"."Path" "Path"
+	,"SiteContent"."ContentType" "ContentType"
+	,"SiteContent"."Length" "Length"
+	,"SiteContent"."Data" "Data"
+	,"SiteContent"."Text" "Text"
+	,"SiteContent"."Roles" "Roles"
+	,"SiteContent"."RoleExceptions" "RoleExceptions"
+	,"SiteContent"."Users" "Users"
+	,"SiteContent"."UserExceptions" "UserExceptions"
+	,"SiteContent"."Schedule" "Schedule"
+	,"SiteContent"."ScheduleExceptions" "ScheduleExceptions"
+	,"SiteContent"."CacheProfile" "CacheProfile"
+	,"SiteContent"."CreatedDate" "CreatedDate"
+	,"SiteContent"."ModifiedDate" "ModifiedDate"
+	,"SiteContent"."RowVersion" "RowVersion"
+	,"SiteContent"."App_Name" "AppName"
+	,"SiteContent"."User_Name" "UserName"
+	,"SiteContent"."Original_Login" "OriginalLogin"
+	,"SiteContent"."SUser_SName" "SuserSname"
+	,"SiteContent"."CreatedOn" "CreatedOn"
+	,"SiteContent"."CreatedBy" "CreatedBy"
+	,"SiteContent"."AccessedOn" "AccessedOn"
+	,"SiteContent"."AccessedBy" "AccessedBy"
+	,"SiteContent"."ModifiedOn" "ModifiedOn"
+	,"SiteContent"."ModifiedBy" "ModifiedBy"
+	,"SiteContent"."ValidFrom" "ValidFrom"
+	,"SiteContent"."ValidTo" "ValidTo"
+from "History-dbo"."SiteContent" "SiteContent"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="SiteContentID" type="Guid" allowNulls="false" label="Site Content ID" showInSummary="true" />
+    <field name="FileName" type="String" allowNulls="false" label="File Name" length="260" showInSummary="true" />
+    <field name="Path" type="String" label="Path" length="260" showInSummary="true" />
+    <field name="ContentType" type="String" label="Content Type" length="150" showInSummary="true" />
+    <field name="Length" type="Int32" label="Length" showInSummary="true" />
+    <field name="Data" type="Byte[]" onDemand="true" sourceFields="" onDemandHandler="SiteContentData" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Data" />
+    <field name="Text" type="String" allowQBE="false" allowSorting="false" label="Text" />
+    <field name="Roles" type="String" label="Roles" length="200" />
+    <field name="RoleExceptions" type="String" label="Role Exceptions" length="200" />
+    <field name="Users" type="String" label="Users" length="200" />
+    <field name="UserExceptions" type="String" label="User Exceptions" length="200" />
+    <field name="Schedule" type="String" label="Schedule" length="200" />
+    <field name="ScheduleExceptions" type="String" label="Schedule Exceptions" length="200" />
+    <field name="CacheProfile" type="String" label="Cache Profile" length="50" />
+    <field name="CreatedDate" type="DateTime" label="Created Date" />
+    <field name="ModifiedDate" type="DateTime" label="Modified Date" />
+    <field name="RowVersion" type="Byte[]" allowNulls="false" allowQBE="false" label="Row Version" readOnly="true" />
+    <field name="AppName" type="String" allowNulls="false" label="App Name" length="128" />
+    <field name="UserName" type="String" allowNulls="false" label="User Name" length="128" />
+    <field name="OriginalLogin" type="String" allowNulls="false" label="Original Login" length="128" />
+    <field name="SuserSname" type="String" allowNulls="false" label="S User S Name" length="128" />
+    <field name="CreatedOn" type="DateTime" allowNulls="false" label="Created On" />
+    <field name="CreatedBy" type="String" allowNulls="false" label="Created By" length="128" />
+    <field name="AccessedOn" type="DateTime" allowNulls="false" label="Accessed On" />
+    <field name="AccessedBy" type="String" allowNulls="false" label="Accessed By" length="128" />
+    <field name="ModifiedOn" type="DateTime" allowNulls="false" label="Modified On" />
+    <field name="ModifiedBy" type="String" allowNulls="false" label="Modified By" length="128" />
+    <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" />
+    <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Historydbo Site Content" sortExpression="Path, FileName">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="SiteContentID" columns="15" />
+        <dataField fieldName="FileName" />
+        <dataField fieldName="Path" />
+        <dataField fieldName="ContentType" />
+        <dataField fieldName="Length" columns="15" />
+        <dataField fieldName="Data" columns="15" />
+        <dataField fieldName="Text" rows="5" />
+        <dataField fieldName="Roles" />
+        <dataField fieldName="RoleExceptions" />
+        <dataField fieldName="Users" />
+        <dataField fieldName="UserExceptions" />
+        <dataField fieldName="Schedule" />
+        <dataField fieldName="ScheduleExceptions" />
+        <dataField fieldName="CacheProfile" columns="50" />
+        <dataField fieldName="CreatedDate" columns="10" />
+        <dataField fieldName="ModifiedDate" columns="10" />
+        <dataField fieldName="RowVersion" columns="15" />
+        <dataField fieldName="AppName" />
+        <dataField fieldName="UserName" />
+        <dataField fieldName="OriginalLogin" />
+        <dataField fieldName="SuserSname" />
+        <dataField fieldName="CreatedOn" columns="10" />
+        <dataField fieldName="CreatedBy" />
+        <dataField fieldName="AccessedOn" columns="10" />
+        <dataField fieldName="AccessedBy" />
+        <dataField fieldName="ModifiedOn" columns="10" />
+        <dataField fieldName="ModifiedBy" />
+        <dataField fieldName="ValidFrom" columns="10" />
+        <dataField fieldName="ValidTo" columns="10" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Historydbo Site Content">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Historydbo Site Content" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SiteContentID" columns="15" />
+            <dataField fieldName="FileName" />
+            <dataField fieldName="Path" />
+            <dataField fieldName="ContentType" />
+            <dataField fieldName="Length" columns="15" />
+            <dataField fieldName="Data" columns="15" />
+            <dataField fieldName="Text" rows="5" />
+            <dataField fieldName="Roles" />
+            <dataField fieldName="RoleExceptions" />
+            <dataField fieldName="Users" />
+            <dataField fieldName="UserExceptions" />
+            <dataField fieldName="Schedule" />
+            <dataField fieldName="ScheduleExceptions" />
+            <dataField fieldName="CacheProfile" columns="50" />
+            <dataField fieldName="CreatedDate" columns="10" />
+            <dataField fieldName="ModifiedDate" columns="10" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Historydbo Site Content">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SiteContentID" columns="15" />
+            <dataField fieldName="FileName" />
+            <dataField fieldName="Path" />
+            <dataField fieldName="ContentType" />
+            <dataField fieldName="Length" columns="15" />
+            <dataField fieldName="Data" columns="15" />
+            <dataField fieldName="Text" rows="5" />
+            <dataField fieldName="Roles" />
+            <dataField fieldName="RoleExceptions" />
+            <dataField fieldName="Users" />
+            <dataField fieldName="UserExceptions" />
+            <dataField fieldName="Schedule" />
+            <dataField fieldName="ScheduleExceptions" />
+            <dataField fieldName="CacheProfile" columns="50" />
+            <dataField fieldName="CreatedDate" columns="10" />
+            <dataField fieldName="ModifiedDate" columns="10" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>

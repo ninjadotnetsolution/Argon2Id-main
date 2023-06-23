@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="HistorydboUser" conflictDetection="overwriteChanges" label="Historydbo User" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"User"."Id" "ID"
+	,"User"."ManagerId" "ManagerID"
+	,"User"."BranchId" "BranchID"
+	,"User"."Login" "Login"
+	,"User"."Password" "Password"
+	,"User"."eMail" "EMail"
+	,"User"."Description" "Description"
+	,"User"."PasswordQuestion" "PasswordQuestion"
+	,"User"."PasswordAnswer" "PasswordAnswer"
+	,"User"."IsApproved" "IsApproved"
+	,"User"."LastActivityDate" "LastActivityDate"
+	,"User"."LastLoginDate" "LastLoginDate"
+	,"User"."LastPasswordChangedDate" "LastPasswordChangedDate"
+	,"User"."CreationDate" "CreationDate"
+	,"User"."IsLockedOut" "IsLockedOut"
+	,"User"."LastLockedOutDate" "LastLockedOutDate"
+	,"User"."FailedPasswordAttemptCount" "FailedPasswordAttemptCount"
+	,"User"."FailedPasswordAttemptWindowStart" "FailedPasswordAttemptWindowStart"
+	,"User"."FailedPasswordAnswerAttemptCount" "FailedPasswordAnswerAttemptCount"
+	,"User"."FailedPasswordAnswerAttemptWindowStart" "FailedPasswordAnswerAttemptWindowStart"
+	,"User"."EULAAcceptedOn" "EulaacceptedOn"
+	,"User"."RowVersion" "RowVersion"
+	,"User"."App_Name" "AppName"
+	,"User"."User_Name" "UserName"
+	,"User"."Original_Login" "OriginalLogin"
+	,"User"."SUser_SName" "SuserSname"
+	,"User"."CreatedOn" "CreatedOn"
+	,"User"."CreatedBy" "CreatedBy"
+	,"User"."AccessedOn" "AccessedOn"
+	,"User"."AccessedBy" "AccessedBy"
+	,"User"."ModifiedOn" "ModifiedOn"
+	,"User"."ModifiedBy" "ModifiedBy"
+	,"User"."ValidFrom" "ValidFrom"
+	,"User"."ValidTo" "ValidTo"
+from "History-dbo"."User" "User"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="ID" type="Guid" allowNulls="false" label="Id" showInSummary="true" />
+    <field name="ManagerID" type="Guid" label="Manager Id" showInSummary="true" />
+    <field name="BranchID" type="Guid" label="Branch Id" showInSummary="true" />
+    <field name="Login" type="String" allowNulls="false" label="Login" length="128" showInSummary="true" />
+    <field name="Password" type="String" allowNulls="false" label="Password" length="128" />
+    <field name="EMail" type="String" label="e Mail" length="256" showInSummary="true" />
+    <field name="Description" type="String" label="Description" length="256" />
+    <field name="PasswordQuestion" type="String" label="Password Question" length="256" />
+    <field name="PasswordAnswer" type="String" label="Password Answer" length="128" />
+    <field name="IsApproved" type="Boolean" allowNulls="false" label="Is Approved" />
+    <field name="LastActivityDate" type="DateTime" allowNulls="false" label="Last Activity Date" />
+    <field name="LastLoginDate" type="DateTime" allowNulls="false" label="Last Login Date" />
+    <field name="LastPasswordChangedDate" type="DateTime" allowNulls="false" label="Last Password Changed Date" />
+    <field name="CreationDate" type="DateTime" allowNulls="false" label="Creation Date" />
+    <field name="IsLockedOut" type="Boolean" allowNulls="false" label="Is Locked Out" />
+    <field name="LastLockedOutDate" type="DateTime" allowNulls="false" label="Last Locked Out Date" />
+    <field name="FailedPasswordAttemptCount" type="Int32" allowNulls="false" label="Failed Password Attempt Count" />
+    <field name="FailedPasswordAttemptWindowStart" type="DateTime" allowNulls="false" label="Failed Password Attempt Window Start" />
+    <field name="FailedPasswordAnswerAttemptCount" type="Int32" allowNulls="false" label="Failed Password Answer Attempt Count" />
+    <field name="FailedPasswordAnswerAttemptWindowStart" type="DateTime" allowNulls="false" label="Failed Password Answer Attempt Window Start" />
+    <field name="EulaacceptedOn" type="DateTime" allowNulls="false" label="EULA Accepted On" />
+    <field name="RowVersion" type="Byte[]" allowNulls="false" allowQBE="false" label="Row Version" readOnly="true" />
+    <field name="AppName" type="String" allowNulls="false" label="App Name" length="128" />
+    <field name="UserName" type="String" allowNulls="false" label="User Name" length="128" />
+    <field name="OriginalLogin" type="String" allowNulls="false" label="Original Login" length="128" />
+    <field name="SuserSname" type="String" allowNulls="false" label="S User S Name" length="128" />
+    <field name="CreatedOn" type="DateTime" allowNulls="false" label="Created On" />
+    <field name="CreatedBy" type="String" allowNulls="false" label="Created By" length="128" />
+    <field name="AccessedOn" type="DateTime" allowNulls="false" label="Accessed On" />
+    <field name="AccessedBy" type="String" allowNulls="false" label="Accessed By" length="128" />
+    <field name="ModifiedOn" type="DateTime" allowNulls="false" label="Modified On" />
+    <field name="ModifiedBy" type="String" allowNulls="false" label="Modified By" length="128" />
+    <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" />
+    <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Historydbo User">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="ID" columns="15" />
+        <dataField fieldName="ManagerID" columns="15" />
+        <dataField fieldName="BranchID" columns="15" />
+        <dataField fieldName="Login" />
+        <dataField fieldName="Password" textMode="Password" />
+        <dataField fieldName="EMail" />
+        <dataField fieldName="Description" />
+        <dataField fieldName="PasswordQuestion" />
+        <dataField fieldName="PasswordAnswer" />
+        <dataField fieldName="IsApproved" />
+        <dataField fieldName="LastActivityDate" columns="10" />
+        <dataField fieldName="LastLoginDate" columns="10" />
+        <dataField fieldName="LastPasswordChangedDate" columns="10" />
+        <dataField fieldName="CreationDate" columns="10" />
+        <dataField fieldName="IsLockedOut" />
+        <dataField fieldName="LastLockedOutDate" columns="10" />
+        <dataField fieldName="FailedPasswordAttemptCount" columns="15" />
+        <dataField fieldName="FailedPasswordAttemptWindowStart" columns="10" />
+        <dataField fieldName="FailedPasswordAnswerAttemptCount" columns="15" />
+        <dataField fieldName="FailedPasswordAnswerAttemptWindowStart" columns="10" />
+        <dataField fieldName="EulaacceptedOn" columns="10" />
+        <dataField fieldName="RowVersion" columns="15" />
+        <dataField fieldName="AppName" />
+        <dataField fieldName="UserName" />
+        <dataField fieldName="OriginalLogin" />
+        <dataField fieldName="SuserSname" />
+        <dataField fieldName="CreatedOn" columns="10" />
+        <dataField fieldName="CreatedBy" />
+        <dataField fieldName="AccessedOn" columns="10" />
+        <dataField fieldName="AccessedBy" />
+        <dataField fieldName="ModifiedOn" columns="10" />
+        <dataField fieldName="ModifiedBy" />
+        <dataField fieldName="ValidFrom" columns="10" />
+        <dataField fieldName="ValidTo" columns="10" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Historydbo User">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Historydbo User" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="ID" columns="15" />
+            <dataField fieldName="ManagerID" columns="15" />
+            <dataField fieldName="BranchID" columns="15" />
+            <dataField fieldName="Login" />
+            <dataField fieldName="Password" textMode="Password" />
+            <dataField fieldName="EMail" />
+            <dataField fieldName="Description" />
+            <dataField fieldName="PasswordQuestion" />
+            <dataField fieldName="PasswordAnswer" />
+            <dataField fieldName="IsApproved" />
+            <dataField fieldName="LastActivityDate" columns="10" />
+            <dataField fieldName="LastLoginDate" columns="10" />
+            <dataField fieldName="LastPasswordChangedDate" columns="10" />
+            <dataField fieldName="CreationDate" columns="10" />
+            <dataField fieldName="IsLockedOut" />
+            <dataField fieldName="LastLockedOutDate" columns="10" />
+            <dataField fieldName="FailedPasswordAttemptCount" columns="15" />
+            <dataField fieldName="FailedPasswordAttemptWindowStart" columns="10" />
+            <dataField fieldName="FailedPasswordAnswerAttemptCount" columns="15" />
+            <dataField fieldName="FailedPasswordAnswerAttemptWindowStart" columns="10" />
+            <dataField fieldName="EulaacceptedOn" columns="10" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Historydbo User">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="ID" columns="15" />
+            <dataField fieldName="ManagerID" columns="15" />
+            <dataField fieldName="BranchID" columns="15" />
+            <dataField fieldName="Login" />
+            <dataField fieldName="Password" textMode="Password" />
+            <dataField fieldName="EMail" />
+            <dataField fieldName="Description" />
+            <dataField fieldName="PasswordQuestion" />
+            <dataField fieldName="PasswordAnswer" />
+            <dataField fieldName="IsApproved" />
+            <dataField fieldName="LastActivityDate" columns="10" />
+            <dataField fieldName="LastLoginDate" columns="10" />
+            <dataField fieldName="LastPasswordChangedDate" columns="10" />
+            <dataField fieldName="CreationDate" columns="10" />
+            <dataField fieldName="IsLockedOut" />
+            <dataField fieldName="LastLockedOutDate" columns="10" />
+            <dataField fieldName="FailedPasswordAttemptCount" columns="15" />
+            <dataField fieldName="FailedPasswordAttemptWindowStart" columns="10" />
+            <dataField fieldName="FailedPasswordAnswerAttemptCount" columns="15" />
+            <dataField fieldName="FailedPasswordAnswerAttemptWindowStart" columns="10" />
+            <dataField fieldName="EulaacceptedOn" columns="10" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>

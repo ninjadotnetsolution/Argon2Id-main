@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="History-dbo" baseTable="Account" alias="Account" created="2023-06-14T19:54:42" modified="2023-06-14T19:55:27" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Id" fieldName="ID" label="Id" />
+    <column name="Name" fieldName="Name" label="Name" />
+    <column name="Owner" fieldName="Owner" label="Owner" />
+    <column name="Email" fieldName="Email" label="Email" />
+    <column name="Description" fieldName="Description" label="Description" />
+    <column name="AddressLine1" fieldName="AddressLine1" label="Address Line1" />
+    <column name="AddressLine2" fieldName="AddressLine2" label="Address Line2" />
+    <column name="City" fieldName="City" label="City" />
+    <column name="State" fieldName="State" label="State" />
+    <column name="Zip+4" fieldName="Zip4" label="Zip+4" />
+    <column name="County" fieldName="County" label="County" />
+    <column name="Country" fieldName="Country" label="Country" />
+    <column name="Type" fieldName="Type" label="Type" />
+    <column name="Latitude" fieldName="Latitude" label="Latitude" />
+    <column name="Longitude" fieldName="Longitude" label="Longitude" />
+    <column name="EndrosementLine" fieldName="EndrosementLine" label="Endrosement Line" />
+    <column name="KeyLine" fieldName="KeyLine" label="Key Line" />
+    <column name="IMABString" fieldName="Imabstring" label="IMAB String" />
+    <column name="IMABEncoded" fieldName="Imabencoded" label="IMAB Encoded" />
+    <column name="MailstopCode" fieldName="MailstopCode" label="Mailstop Code" />
+    <column name="AttentionLine" fieldName="AttentionLine" label="Attention Line" />
+    <column name="IndividualLine" fieldName="IndividualLine" label="Individual Line" />
+    <column name="FunctionalTitle" fieldName="FunctionalTitle" label="Functional Title" />
+    <column name="GDDName" fieldName="Gddname" label="GDD Name" />
+    <column name="BusinessName" fieldName="BusinessName" label="Business Name" />
+    <column name="APIGoogle" fieldName="Apigoogle" label="API Google" />
+    <column name="APIUSPSUserName" fieldName="ApiuspsuserName" label="APIUSPS User Name" />
+    <column name="APIUSPSPassword" fieldName="Apiuspspassword" label="APIUSPS Password" />
+    <column name="RowVersion" fieldName="RowVersion" label="Row Version" />
+    <column name="App_Name" fieldName="AppName" label="App Name" />
+    <column name="User_Name" fieldName="UserName" label="User Name" />
+    <column name="Original_Login" fieldName="OriginalLogin" label="Original Login" />
+    <column name="SUser_SName" fieldName="SuserSname" label="S User S Name" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" />
+    <column name="CreatedBy" fieldName="CreatedBy" label="Created By" />
+    <column name="AccessedOn" fieldName="AccessedOn" label="Accessed On" />
+    <column name="AccessedBy" fieldName="AccessedBy" label="Accessed By" />
+    <column name="ModifiedOn" fieldName="ModifiedOn" label="Modified On" />
+    <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
+    <column name="ValidFrom" fieldName="ValidFrom" label="Valid From" />
+    <column name="ValidTo" fieldName="ValidTo" label="Valid To" />
+  </columns>
+</dataModel>

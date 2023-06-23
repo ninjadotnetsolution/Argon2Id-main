@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Role" alias="Role" created="2023-06-14T19:54:20" modified="2023-06-14T19:56:01" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Id" fieldName="ID" label="Id" />
+    <column name="Name" fieldName="Name" label="Name" />
+    <column name="Description" fieldName="Description" label="Description" />
+    <column name="RowVersion" fieldName="RowVersion" label="Row Version" />
+    <column name="App_Name" fieldName="AppName" label="App Name" />
+    <column name="User_Name" fieldName="UserName" label="User Name" />
+    <column name="Original_Login" fieldName="OriginalLogin" label="Original Login" />
+    <column name="SUser_SName" fieldName="SuserSname" label="S User S Name" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" />
+    <column name="CreatedBy" fieldName="CreatedBy" label="Created By" />
+    <column name="AccessedOn" fieldName="AccessedOn" label="Accessed On" />
+    <column name="AccessedBy" fieldName="AccessedBy" label="Accessed By" />
+    <column name="ModifiedOn" fieldName="ModifiedOn" label="Modified On" />
+    <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
+    <column name="ValidFrom" fieldName="ValidFrom" label="Valid From" />
+    <column name="ValidTo" fieldName="ValidTo" label="Valid To" />
+  </columns>
+</dataModel>

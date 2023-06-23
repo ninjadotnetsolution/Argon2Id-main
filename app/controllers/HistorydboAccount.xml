@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="HistorydboAccount" conflictDetection="overwriteChanges" label="Historydbo Account" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Account"."Id" "ID"
+	,"Account"."Name" "Name"
+	,"Account"."Owner" "Owner"
+	,"Account"."Email" "Email"
+	,"Account"."Description" "Description"
+	,"Account"."AddressLine1" "AddressLine1"
+	,"Account"."AddressLine2" "AddressLine2"
+	,"Account"."City" "City"
+	,"Account"."State" "State"
+	,"Account"."Zip+4" "Zip4"
+	,"Account"."County" "County"
+	,"Account"."Country" "Country"
+	,"Account"."Type" "Type"
+	,"Account"."Latitude" "Latitude"
+	,"Account"."Longitude" "Longitude"
+	,"Account"."EndrosementLine" "EndrosementLine"
+	,"Account"."KeyLine" "KeyLine"
+	,"Account"."IMABString" "Imabstring"
+	,"Account"."IMABEncoded" "Imabencoded"
+	,"Account"."MailstopCode" "MailstopCode"
+	,"Account"."AttentionLine" "AttentionLine"
+	,"Account"."IndividualLine" "IndividualLine"
+	,"Account"."FunctionalTitle" "FunctionalTitle"
+	,"Account"."GDDName" "Gddname"
+	,"Account"."BusinessName" "BusinessName"
+	,"Account"."APIGoogle" "Apigoogle"
+	,"Account"."APIUSPSUserName" "ApiuspsuserName"
+	,"Account"."APIUSPSPassword" "Apiuspspassword"
+	,"Account"."RowVersion" "RowVersion"
+	,"Account"."App_Name" "AppName"
+	,"Account"."User_Name" "UserName"
+	,"Account"."Original_Login" "OriginalLogin"
+	,"Account"."SUser_SName" "SuserSname"
+	,"Account"."CreatedOn" "CreatedOn"
+	,"Account"."CreatedBy" "CreatedBy"
+	,"Account"."AccessedOn" "AccessedOn"
+	,"Account"."AccessedBy" "AccessedBy"
+	,"Account"."ModifiedOn" "ModifiedOn"
+	,"Account"."ModifiedBy" "ModifiedBy"
+	,"Account"."ValidFrom" "ValidFrom"
+	,"Account"."ValidTo" "ValidTo"
+from "History-dbo"."Account" "Account"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="ID" type="Guid" allowNulls="false" label="Id" showInSummary="true" />
+    <field name="Name" type="String" allowNulls="false" label="Name" length="128" showInSummary="true" />
+    <field name="Owner" type="String" allowNulls="false" label="Owner" length="128" showInSummary="true" />
+    <field name="Email" type="String" label="Email" length="256" showInSummary="true" />
+    <field name="Description" type="String" label="Description" length="128" showInSummary="true" />
+    <field name="AddressLine1" type="String" label="Address Line1" length="128" />
+    <field name="AddressLine2" type="String" label="Address Line2" length="128" />
+    <field name="City" type="String" label="City" length="128" />
+    <field name="State" type="String" label="State" length="128" />
+    <field name="Zip4" type="String" label="Zip+4" length="10" />
+    <field name="County" type="String" label="County" length="128" />
+    <field name="Country" type="String" label="Country" length="128" />
+    <field name="Type" type="String" label="Type" length="128" />
+    <field name="Latitude" type="Decimal" label="Latitude" />
+    <field name="Longitude" type="Decimal" label="Longitude" />
+    <field name="EndrosementLine" type="String" label="Endrosement Line" length="128" />
+    <field name="KeyLine" type="String" label="Key Line" length="128" />
+    <field name="Imabstring" type="String" label="IMAB String" length="31" />
+    <field name="Imabencoded" type="String" label="IMAB Encoded" length="65" />
+    <field name="MailstopCode" type="String" label="Mailstop Code" length="128" />
+    <field name="AttentionLine" type="String" label="Attention Line" length="128" />
+    <field name="IndividualLine" type="String" label="Individual Line" length="128" />
+    <field name="FunctionalTitle" type="String" label="Functional Title" length="128" />
+    <field name="Gddname" type="String" label="GDD Name" length="128" />
+    <field name="BusinessName" type="String" label="Business Name" length="128" />
+    <field name="Apigoogle" type="String" label="API Google" length="128" />
+    <field name="ApiuspsuserName" type="String" label="APIUSPS User Name" length="128" />
+    <field name="Apiuspspassword" type="String" label="APIUSPS Password" length="128" />
+    <field name="RowVersion" type="Byte[]" allowNulls="false" allowQBE="false" label="Row Version" readOnly="true" />
+    <field name="AppName" type="String" allowNulls="false" label="App Name" length="128" />
+    <field name="UserName" type="String" allowNulls="false" label="User Name" length="128" />
+    <field name="OriginalLogin" type="String" allowNulls="false" label="Original Login" length="128" />
+    <field name="SuserSname" type="String" allowNulls="false" label="S User S Name" length="128" />
+    <field name="CreatedOn" type="DateTime" allowNulls="false" label="Created On" />
+    <field name="CreatedBy" type="String" allowNulls="false" label="Created By" length="128" />
+    <field name="AccessedOn" type="DateTime" allowNulls="false" label="Accessed On" />
+    <field name="AccessedBy" type="String" allowNulls="false" label="Accessed By" length="128" />
+    <field name="ModifiedOn" type="DateTime" allowNulls="false" label="Modified On" />
+    <field name="ModifiedBy" type="String" allowNulls="false" label="Modified By" length="128" />
+    <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" />
+    <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Historydbo Account">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="ID" columns="15" />
+        <dataField fieldName="Name" />
+        <dataField fieldName="Owner" />
+        <dataField fieldName="Email" />
+        <dataField fieldName="Description" />
+        <dataField fieldName="AddressLine1" />
+        <dataField fieldName="AddressLine2" />
+        <dataField fieldName="City" />
+        <dataField fieldName="State" />
+        <dataField fieldName="Zip4" columns="10" />
+        <dataField fieldName="County" />
+        <dataField fieldName="Country" />
+        <dataField fieldName="Type" />
+        <dataField fieldName="Latitude" columns="15" />
+        <dataField fieldName="Longitude" columns="15" />
+        <dataField fieldName="EndrosementLine" />
+        <dataField fieldName="KeyLine" />
+        <dataField fieldName="Imabstring" columns="31" />
+        <dataField fieldName="Imabencoded" />
+        <dataField fieldName="MailstopCode" />
+        <dataField fieldName="AttentionLine" />
+        <dataField fieldName="IndividualLine" />
+        <dataField fieldName="FunctionalTitle" />
+        <dataField fieldName="Gddname" />
+        <dataField fieldName="BusinessName" />
+        <dataField fieldName="Apigoogle" />
+        <dataField fieldName="ApiuspsuserName" />
+        <dataField fieldName="Apiuspspassword" />
+        <dataField fieldName="RowVersion" columns="15" />
+        <dataField fieldName="AppName" />
+        <dataField fieldName="UserName" />
+        <dataField fieldName="OriginalLogin" />
+        <dataField fieldName="SuserSname" />
+        <dataField fieldName="CreatedOn" columns="10" />
+        <dataField fieldName="CreatedBy" />
+        <dataField fieldName="AccessedOn" columns="10" />
+        <dataField fieldName="AccessedBy" />
+        <dataField fieldName="ModifiedOn" columns="10" />
+        <dataField fieldName="ModifiedBy" />
+        <dataField fieldName="ValidFrom" columns="10" />
+        <dataField fieldName="ValidTo" columns="10" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Historydbo Account">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Historydbo Account" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="ID" columns="15" />
+            <dataField fieldName="Name" />
+            <dataField fieldName="Owner" />
+            <dataField fieldName="Email" />
+            <dataField fieldName="Description" />
+            <dataField fieldName="AddressLine1" />
+            <dataField fieldName="AddressLine2" />
+            <dataField fieldName="City" />
+            <dataField fieldName="State" />
+            <dataField fieldName="Zip4" columns="10" />
+            <dataField fieldName="County" />
+            <dataField fieldName="Country" />
+            <dataField fieldName="Type" />
+            <dataField fieldName="Latitude" columns="15" />
+            <dataField fieldName="Longitude" columns="15" />
+            <dataField fieldName="EndrosementLine" />
+            <dataField fieldName="KeyLine" />
+            <dataField fieldName="Imabstring" columns="31" />
+            <dataField fieldName="Imabencoded" />
+            <dataField fieldName="MailstopCode" />
+            <dataField fieldName="AttentionLine" />
+            <dataField fieldName="IndividualLine" />
+            <dataField fieldName="FunctionalTitle" />
+            <dataField fieldName="Gddname" />
+            <dataField fieldName="BusinessName" />
+            <dataField fieldName="Apigoogle" />
+            <dataField fieldName="ApiuspsuserName" />
+            <dataField fieldName="Apiuspspassword" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Historydbo Account">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="ID" columns="15" />
+            <dataField fieldName="Name" />
+            <dataField fieldName="Owner" />
+            <dataField fieldName="Email" />
+            <dataField fieldName="Description" />
+            <dataField fieldName="AddressLine1" />
+            <dataField fieldName="AddressLine2" />
+            <dataField fieldName="City" />
+            <dataField fieldName="State" />
+            <dataField fieldName="Zip4" columns="10" />
+            <dataField fieldName="County" />
+            <dataField fieldName="Country" />
+            <dataField fieldName="Type" />
+            <dataField fieldName="Latitude" columns="15" />
+            <dataField fieldName="Longitude" columns="15" />
+            <dataField fieldName="EndrosementLine" />
+            <dataField fieldName="KeyLine" />
+            <dataField fieldName="Imabstring" columns="31" />
+            <dataField fieldName="Imabencoded" />
+            <dataField fieldName="MailstopCode" />
+            <dataField fieldName="AttentionLine" />
+            <dataField fieldName="IndividualLine" />
+            <dataField fieldName="FunctionalTitle" />
+            <dataField fieldName="Gddname" />
+            <dataField fieldName="BusinessName" />
+            <dataField fieldName="Apigoogle" />
+            <dataField fieldName="ApiuspsuserName" />
+            <dataField fieldName="Apiuspspassword" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>

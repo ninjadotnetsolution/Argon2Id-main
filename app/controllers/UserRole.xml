@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="UserRole" conflictDetection="overwriteChanges" label="User Role" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"UserRole"."UserId" "UserID"
+	,"User"."Login" "UserLogin"
+	,"UserBranch"."Name" "UserBranchName"
+	,"UserRole"."RoleId" "RoleID"
+	,"Role"."Name" "RoleName"
+	,"UserRole"."RowVersion" "RowVersion"
+	,"UserRole"."App_Name" "AppName"
+	,"UserRole"."User_Name" "UserName"
+	,"UserRole"."Original_Login" "OriginalLogin"
+	,"UserRole"."SUser_SName" "SuserSname"
+	,"UserRole"."CreatedOn" "CreatedOn"
+	,"UserRole"."CreatedBy" "CreatedBy"
+	,"UserRole"."AccessedOn" "AccessedOn"
+	,"UserRole"."AccessedBy" "AccessedBy"
+	,"UserRole"."ModifiedOn" "ModifiedOn"
+	,"UserRole"."ModifiedBy" "ModifiedBy"
+	,"UserRole"."ValidFrom" "ValidFrom"
+	,"UserRole"."ValidTo" "ValidTo"
+from "dbo"."UserRole" "UserRole"
+	left join "dbo"."User" "User" on "UserRole"."UserId" = "User"."Id"
+	left join "dbo"."Branch" "UserBranch" on "User"."BranchId" = "UserBranch"."Id"
+	left join "dbo"."Role" "Role" on "UserRole"."RoleId" = "Role"."Id"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="UserID" type="Guid" allowNulls="false" isPrimaryKey="true" label="User Id" showInSummary="true">
+      <items style="Lookup" dataController="User" newDataView="createForm1" dataValueField="ID" dataTextField="ManagerLogin" copy="UserBranchName=ManagerBranchName" />
+    </field>
+    <field name="UserLogin" type="String" readOnly="true" label="User Login" length="128" />
+    <field name="UserBranchName" type="String" readOnly="true" label="User Branch Name" length="128" />
+    <field name="RoleID" type="Guid" allowNulls="false" isPrimaryKey="true" label="Role Id" showInSummary="true">
+      <items style="Lookup" dataController="Role" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
+    </field>
+    <field name="RoleName" type="String" readOnly="true" label="Role Name" length="128" />
+    <field name="RowVersion" type="Byte[]" allowNulls="false" allowQBE="false" label="Row Version" readOnly="true" showInSummary="true" />
+    <field name="AppName" type="String" allowNulls="false" default="(app_name())" label="App Name" length="128" showInSummary="true" />
+    <field name="UserName" type="String" allowNulls="false" default="(user_name())" label="User Name" length="128" showInSummary="true" />
+    <field name="OriginalLogin" type="String" allowNulls="false" default="(original_login())" label="Original Login" length="128" />
+    <field name="SuserSname" type="String" allowNulls="false" default="(suser_sname())" label="S User S Name" length="128" />
+    <field name="CreatedOn" type="DateTime" allowNulls="false" default="(sysutcdatetime())" label="Created On" />
+    <field name="CreatedBy" type="String" allowNulls="false" default="(suser_sname())" label="Created By" length="128" />
+    <field name="AccessedOn" type="DateTime" allowNulls="false" default="(sysutcdatetime())" label="Accessed On" />
+    <field name="AccessedBy" type="String" allowNulls="false" default="(suser_sname())" label="Accessed By" length="128" />
+    <field name="ModifiedOn" type="DateTime" allowNulls="false" default="(sysutcdatetime())" label="Modified On" />
+    <field name="ModifiedBy" type="String" allowNulls="false" default="(suser_sname())" label="Modified By" length="128" />
+    <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" readOnly="true" />
+    <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" readOnly="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="User Role">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="UserID" aliasFieldName="UserLogin" />
+        <dataField fieldName="UserBranchName" />
+        <dataField fieldName="RoleID" aliasFieldName="RoleName" />
+        <dataField fieldName="RowVersion" columns="15" />
+        <dataField fieldName="AppName" />
+        <dataField fieldName="UserName" />
+        <dataField fieldName="OriginalLogin" />
+        <dataField fieldName="SuserSname" />
+        <dataField fieldName="CreatedOn" columns="10" />
+        <dataField fieldName="CreatedBy" />
+        <dataField fieldName="AccessedOn" columns="10" />
+        <dataField fieldName="AccessedBy" />
+        <dataField fieldName="ModifiedOn" columns="10" />
+        <dataField fieldName="ModifiedBy" />
+        <dataField fieldName="ValidFrom" columns="10" />
+        <dataField fieldName="ValidTo" columns="10" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review User Role">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="User Role" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="UserID" aliasFieldName="UserLogin" />
+            <dataField fieldName="UserBranchName" />
+            <dataField fieldName="RoleID" aliasFieldName="RoleName" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New User Role">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="UserID" aliasFieldName="UserLogin" />
+            <dataField fieldName="UserBranchName" />
+            <dataField fieldName="RoleID" aliasFieldName="RoleName" />
+            <dataField fieldName="RowVersion" columns="15" />
+            <dataField fieldName="AppName" />
+            <dataField fieldName="UserName" />
+            <dataField fieldName="OriginalLogin" />
+            <dataField fieldName="SuserSname" />
+            <dataField fieldName="CreatedOn" columns="10" />
+            <dataField fieldName="CreatedBy" />
+            <dataField fieldName="AccessedOn" columns="10" />
+            <dataField fieldName="AccessedBy" />
+            <dataField fieldName="ModifiedOn" columns="10" />
+            <dataField fieldName="ModifiedBy" />
+            <dataField fieldName="ValidFrom" columns="10" />
+            <dataField fieldName="ValidTo" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>
