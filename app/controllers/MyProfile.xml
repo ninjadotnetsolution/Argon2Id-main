@@ -207,5 +207,8 @@ $app.touch.show({
 });
 
 									]]></rule>
+    <rule id="r103" commandName="Custom" commandArgument="Agree" view="agreeForm" type="Sql" phase="Execute"><![CDATA[update User
+set Comment = 'EULAAccepted'
+where Id = @BusinessRules_UserId]]></rule>
   </businessRules>
 </dataController>

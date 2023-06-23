@@ -1,1 +1,7 @@
-﻿{}
+﻿{
+  "dates": {
+    "localTime": {
+      "enabled": true
+    }
+  }
+}
