@@ -557,6 +557,8 @@ namespace Argon2Id.Data
             PopulatePageFields(page);
             if (command == null)
                 return true;
+            if (values != null)
+                Argon2Id.Security.EventTracker.EnsureTrackingFields(page, _config);
             if (command.CommandType == CommandType.Text)
             {
                 var statementMatch = SqlSelectRegex1.Match(command.CommandText);

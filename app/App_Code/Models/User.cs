@@ -83,6 +83,10 @@ namespace Argon2Id.Models
 
         ValidTo,
 
+        Comment,
+
+        OrganizationId,
+
         Roles,
 
         PasswordConfirmation,
@@ -201,6 +205,12 @@ namespace Argon2Id.Models
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private DateTime? _validTo;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _comment;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private System.Guid? _organizationId;
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _roles;
@@ -695,6 +705,32 @@ namespace Argon2Id.Models
             {
                 _validTo = value;
                 UpdateFieldValue("ValidTo", value);
+            }
+        }
+
+        public string Comment
+        {
+            get
+            {
+                return _comment;
+            }
+            set
+            {
+                _comment = value;
+                UpdateFieldValue("Comment", value);
+            }
+        }
+
+        public System.Guid? OrganizationId
+        {
+            get
+            {
+                return _organizationId;
+            }
+            set
+            {
+                _organizationId = value;
+                UpdateFieldValue("OrganizationId", value);
             }
         }
 

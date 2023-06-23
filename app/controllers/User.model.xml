@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataModel baseSchema="dbo" baseTable="User" alias="User" created="2023-06-14T19:54:27" modified="2023-06-14T19:55:52" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+<dataModel baseSchema="dbo" baseTable="User" alias="User" created="2023-06-14T19:54:27" modified="2023-06-24T01:40:54" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
   <foreignKeys>
     <foreignKey id="Manager" parentTableSchema="dbo" parentTableName="User" x="495" y="20">
       <foreignKeyColumn columnName="ManagerId" parentColumnName="Id" />
@@ -49,5 +49,7 @@
     <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
     <column name="ValidFrom" fieldName="ValidFrom" label="Valid From" />
     <column name="ValidTo" fieldName="ValidTo" label="Valid To" />
+    <column name="comment" fieldName="Comment" label="Comment" />
+    <column name="OrganizationId" fieldName="OrganizationId" label="Organization Id" />
   </columns>
 </dataModel>

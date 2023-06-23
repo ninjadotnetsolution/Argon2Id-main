@@ -110,7 +110,7 @@
       <controls />
       <about>This page allows receipt management.</about>
     </page>
-    <page name="Organization" title="Organization" description="View Organization" index="1130" path="Organization">
+    <page name="Organization" title="Organization" description="View Organization" index="1130" path="Organization" roles="Administrators" useExtenders="false" offline="false" kiosk="false">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -119,26 +119,6 @@
       </dataViews>
       <controls />
       <about>This page allows organization management.</about>
-    </page>
-    <page name="Organization1" title="Organization1" description="View Organization1" index="1140" path="Organization1">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="Organization1" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows organization1 management.</about>
-    </page>
-    <page name="Receipt1" title="Receipt1" description="View Receipt1" index="1150" path="Receipt1">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="Receipt1" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows receipt1 management.</about>
     </page>
     <page name="SiteContent" title="Site Content" description="View Site Content" index="1160" path="Site Content" roles="Administrators, Content Editors, Developers">
       <containers>
@@ -150,8 +130,8 @@
       <controls />
       <about>This page allows site content management.</about>
     </page>
-    <page name="System" path="System" index="1170" title="System" roles="*" url="about:blank" useExtenders="false" offline="false" kiosk="false" generate="Always" />
-    <page name="UserRole" title="User Role" description="View User Role" index="1180" path="System | User Role">
+    <page name="System" path="System" index="1170" title="System" roles="Administrators" url="about:blank" useExtenders="false" offline="false" kiosk="false" generate="Always" />
+    <page name="UserRole" title="User Role" description="View User Role" index="1180" path="System | User Role" roles="Administrators" useExtenders="false" offline="false" kiosk="false">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -161,7 +141,7 @@
       <controls />
       <about>This page allows user role management.</about>
     </page>
-    <page name="Role" title="Role" description="View Role" index="1190" path="System | Role">
+    <page name="Role" title="Role" description="View Role" index="1190" path="System | Role" roles="Administrators" useExtenders="false" offline="false" kiosk="false">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -171,6 +151,7 @@
       <controls />
       <about>This page allows role management.</about>
     </page>
+    <page name="EULA" path="EULA" index="1200" title="EULA" roles="*" useExtenders="false" offline="false" kiosk="false" generate="Always" />
   </pages>
   <userControls>
     <userControl name="TableOfContents" prefix="uc" generate="Always">

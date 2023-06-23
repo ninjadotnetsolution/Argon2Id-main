@@ -142,6 +142,15 @@
         </category>
       </categories>
     </view>
+    <view id="agreeForm" type="Form" label="agree Form">
+      <categories>
+        <category id="c1" headerText="My Profile" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="UserName" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
   </views>
   <actions>
     <actionGroup id="ag1" scope="Form">

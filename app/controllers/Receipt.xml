@@ -144,4 +144,7 @@ from "dbo"."Receipt" "Receipt"
       <action id="a7" whenLastCommandName="New" commandName="Cancel" />
     </actionGroup>
   </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[set @OrganizationId = @BusinessRules_OrganizationID]]></rule>
+  </businessRules>
 </dataController>

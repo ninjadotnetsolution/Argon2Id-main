@@ -41,6 +41,8 @@ select
 	,"User"."ModifiedBy" "ModifiedBy"
 	,"User"."ValidFrom" "ValidFrom"
 	,"User"."ValidTo" "ValidTo"
+	,"User"."comment" "Comment"
+	,"User"."OrganizationId" "OrganizationId"
 from "dbo"."User" "User"
 	left join "dbo"."User" "Manager" on "User"."ManagerId" = "Manager"."Id"
 	left join "dbo"."Branch" "ManagerBranch" on "Manager"."BranchId" = "ManagerBranch"."Id"
@@ -96,10 +98,15 @@ from "dbo"."User" "User"
     <field name="ModifiedBy" type="String" allowNulls="false" default="(suser_sname())" label="Modified By" length="128" />
     <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" readOnly="true" />
     <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" readOnly="true" />
+    <field name="Comment" type="String" allowQBE="false" allowSorting="false" label="Comment" />
+    <field name="OrganizationId" type="Guid" label="Organization Id" />
     <field name="Roles" type="String" label="Roles">
       <items style="CheckBoxList" dataController="Role" targetController="HistorydboUserRole" />
     </field>
     <field name="PasswordConfirmation" type="String" label="Password Confirmation" isVirtual="true" length="50" />
+    <field name="Receipt" type="DataView" label="Receipt">
+      <dataView controller="Receipt" view="grid1" />
+    </field>
   </fields>
   <views>
     <view id="grid1" type="Grid" commandId="command1" label="User">
@@ -139,6 +146,8 @@ from "dbo"."User" "User"
         <dataField fieldName="ModifiedBy" />
         <dataField fieldName="ValidFrom" columns="10" />
         <dataField fieldName="ValidTo" columns="10" />
+        <dataField fieldName="Comment" rows="5" />
+        <dataField fieldName="OrganizationId" columns="15" />
       </dataFields>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review User">
@@ -182,7 +191,10 @@ from "dbo"."User" "User"
             <dataField fieldName="ModifiedBy" />
             <dataField fieldName="ValidFrom" columns="10" />
             <dataField fieldName="ValidTo" columns="10" />
+            <dataField fieldName="Comment" rows="5" />
+            <dataField fieldName="OrganizationId" columns="15" />
             <dataField fieldName="Roles" rows="5" />
+            <dataField fieldName="Receipt" columns="15" />
           </dataFields>
         </category>
       </categories>
@@ -228,6 +240,8 @@ from "dbo"."User" "User"
             <dataField fieldName="ModifiedBy" />
             <dataField fieldName="ValidFrom" columns="10" />
             <dataField fieldName="ValidTo" columns="10" />
+            <dataField fieldName="Comment" rows="5" />
+            <dataField fieldName="OrganizationId" columns="15" />
             <dataField fieldName="Roles" rows="5" />
           </dataFields>
         </category>

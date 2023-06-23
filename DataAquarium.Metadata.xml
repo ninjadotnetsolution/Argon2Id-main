@@ -4754,6 +4754,21 @@
         <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>User</TABLE_NAME>
+        <COLUMN_NAME>comment</COLUMN_NAME>
+        <ORDINAL_POSITION>36</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>text</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>2147483647</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>2147483647</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>iso_1</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>User</TABLE_NAME>
         <COLUMN_NAME>eMail</COLUMN_NAME>
         <ORDINAL_POSITION>6</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -7256,6 +7271,21 @@
         <ORDINAL_POSITION>35</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>uniqueidentifier</DATA_TYPE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
+        <TABLE_SCHEMA>History-dbo</TABLE_SCHEMA>
+        <TABLE_NAME>User</TABLE_NAME>
+        <COLUMN_NAME>comment</COLUMN_NAME>
+        <ORDINAL_POSITION>36</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>text</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>2147483647</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>2147483647</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>iso_1</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -9883,6 +9913,21 @@
         <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>User</TABLE_NAME>
+        <COLUMN_NAME>comment</COLUMN_NAME>
+        <ORDINAL_POSITION>36</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>text</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>2147483647</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>2147483647</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>iso_1</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>User</TABLE_NAME>
         <COLUMN_NAME>eMail</COLUMN_NAME>
         <ORDINAL_POSITION>6</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -12393,6 +12438,21 @@
         <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
         <TABLE_SCHEMA>History-dbo</TABLE_SCHEMA>
         <TABLE_NAME>User</TABLE_NAME>
+        <COLUMN_NAME>comment</COLUMN_NAME>
+        <ORDINAL_POSITION>36</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>text</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>2147483647</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>2147483647</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>iso_1</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
+        <TABLE_SCHEMA>History-dbo</TABLE_SCHEMA>
+        <TABLE_NAME>User</TABLE_NAME>
         <COLUMN_NAME>ManagerId</COLUMN_NAME>
         <ORDINAL_POSITION>2</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -14538,6 +14598,33 @@
           <NonVersionedProviderType>14</NonVersionedProviderType>
           <IsColumnSet>false</IsColumnSet>
         </Column>
+        <Column>
+          <ColumnName>comment</ColumnName>
+          <ColumnOrdinal>35</ColumnOrdinal>
+          <ColumnSize>2147483647</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>comment</BaseColumnName>
+          <BaseSchemaName>History-dbo</BaseSchemaName>
+          <BaseTableName>User</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>18</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>true</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>text</DataTypeName>
+          <NonVersionedProviderType>18</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
       </DocumentElement>
     </Table>
     <Table Schema="dbo" Name="User">
@@ -15485,6 +15572,33 @@
           <ProviderSpecificDataType>System.Data.SqlTypes.SqlGuid, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
           <DataTypeName>uniqueidentifier</DataTypeName>
           <NonVersionedProviderType>14</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>comment</ColumnName>
+          <ColumnOrdinal>35</ColumnOrdinal>
+          <ColumnSize>2147483647</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>comment</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>User</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>18</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>true</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>text</DataTypeName>
+          <NonVersionedProviderType>18</NonVersionedProviderType>
           <IsColumnSet>false</IsColumnSet>
         </Column>
       </DocumentElement>
@@ -23538,6 +23652,19 @@
       </Columns>
       <Columns>
         <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
+        <TABLE_SCHEMA>History-dbo</TABLE_SCHEMA>
+        <TABLE_NAME>User</TABLE_NAME>
+        <COLUMN_NAME>comment</COLUMN_NAME>
+        <ORDINAL_POSITION>36</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>text</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>2147483647</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>2147483647</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>iso_1</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>User</TABLE_NAME>
         <COLUMN_NAME>Id</COLUMN_NAME>
@@ -23945,6 +24072,19 @@
         <ORDINAL_POSITION>35</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>uniqueidentifier</DATA_TYPE>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>User</TABLE_NAME>
+        <COLUMN_NAME>comment</COLUMN_NAME>
+        <ORDINAL_POSITION>36</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>text</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>2147483647</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>2147483647</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>iso_1</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
       </Columns>
       <Columns>
         <TABLE_CATALOG>Argon2Id</TABLE_CATALOG>

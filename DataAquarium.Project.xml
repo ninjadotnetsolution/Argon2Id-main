@@ -6,10 +6,10 @@
   <connectionString hostDatabaseSharing="false" sessionStateMode="None">Data Source=DESKTOP-4VRSISD;Initial Catalog=Argon2Id;Integrated Security=True;</connectionString>
   <providerName>System.Data.SqlClient</providerName>
   <namespace>Argon2Id</namespace>
-  <webServer run="true" port="40003" preview="Browser" client="">
+  <webServer run="true" port="56838" preview="Browser" client="">
     <webConfig></webConfig>
   </webServer>
-  <features useSaveAndNew="true" pageHeader="" copyright="" annotations="false" annotationsPath="" newColumn="true" floating="false" maxGridFields="100" multiSelect="false" batchEdit="false" advancedSearch="false" advancedLookup="false" relationshipExplorer="false" enablePermalinks="false" enableHistory="false" enableTransactions="false" showModalForms="true" tabViewSelection="0">
+  <features useSaveAndNew="true" pageHeader="" copyright="" annotations="false" annotationsPath="" newColumn="true" floating="false" maxGridFields="100" multiSelect="false" batchEdit="false" advancedSearch="false" advancedLookup="false" relationshipExplorer="false" enablePermalinks="false" enableHistory="false" enableTransactions="false" showModalForms="true" tabViewSelection="10">
     <navigation detectUnderscoreSeparatedSchema="" />
     <blob allowUploadOnInsert="true" />
     <framework scriptOnly="true" useExtenders="false" />
@@ -17,7 +17,8 @@
     <touch desktopDisplayDensity="Condensed" mobileDisplayDensity="Auto" transitions="" sidebar="Landscape" labelsInList="DisplayedBelow" initialListMode="SeeAll" menu="toolbar" promoteActions="true" smartDates="true" mapApiIdentifier="" mapApiIdentifierMobile="" />
     <cms searchEngine="" analysisEngine="" analysisOnDataPages="false" />
     <ease urlHashing="false">
-      <auditing></auditing>
+      <auditing>Created By User ID       = CreatedById
+Created On Date           = CreatedOn</auditing>
     </ease>
     <packageProperties></packageProperties>
     <smtp deliveryMethod="Network" deliveryFormat="" from="" clientDomain="" targetName="" host="" port="" defaultCredentials="true" enableSsl="false" username="" password="" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataController name="Organization" conflictDetection="overwriteChanges" label="Organization" xmlns="urn:schemas-codeontime-com:data-aquarium">
+<dataController name="Organization" conflictDetection="overwriteChanges" label="Organization" handler="Argon2Id.Rules.OrganizationBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
   <commands>
     <command id="command1" type="Text">
       <text><![CDATA[
@@ -19,6 +19,9 @@ from "dbo"."Organization" "Organization"
   <fields>
     <field name="ID" type="Guid" allowNulls="false" isPrimaryKey="true" label="Id" />
     <field name="Name" type="String" allowNulls="false" label="Name" length="50" showInSummary="true" />
+    <field name="OwnerEmail" type="String" label="Owner Email" isVirtual="true" length="128" />
+    <field name="OwnerPassword" type="String" label="Owner Password" isVirtual="true" length="128" />
+    <field name="OwnerPasswordConfirmation" type="String" label="Owner Password Confirmation" isVirtual="true" length="128" />
   </fields>
   <views>
     <view id="grid1" type="Grid" commandId="command1" label="Organization">
@@ -48,6 +51,9 @@ from "dbo"."Organization" "Organization"
           <dataFields>
             <dataField fieldName="ID" columns="15" />
             <dataField fieldName="Name" columns="50" />
+            <dataField fieldName="OwnerEmail" />
+            <dataField fieldName="OwnerPassword" textMode="Password" />
+            <dataField fieldName="OwnerPasswordConfirmation" textMode="Password" />
           </dataFields>
         </category>
       </categories>
@@ -112,4 +118,8 @@ from "dbo"."Organization" "Organization"
       <action id="a7" whenLastCommandName="New" commandName="Cancel" />
     </actionGroup>
   </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Code" phase="Before" />
+    <rule id="r101" commandName="Insert" type="Code" phase="After" />
+  </businessRules>
 </dataController>

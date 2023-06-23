@@ -24,9 +24,9 @@ namespace Argon2Id.Security
 
         private static Regex _createdByUserNameRegex = null;
 
-        private static Regex _createdByUserIdRegex = null;
+        private static Regex _createdByUserIdRegex = new Regex("CreatedById", RegexOptions.IgnoreCase);
 
-        private static Regex _createdOnRegex = null;
+        private static Regex _createdOnRegex = new Regex("CreatedOn", RegexOptions.IgnoreCase);
 
         private string _email;
 

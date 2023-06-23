@@ -606,6 +606,9 @@ from "dbo"."Organization" "Organization"
     <fields>
       <field name="ID" type="Guid" allowNulls="false" isPrimaryKey="true" label="Id" />
       <field name="Name" type="String" allowNulls="false" label="Name" length="50" showInSummary="true" />
+      <field name="OwnerEmail" type="String" label="Owner Email" isVirtual="true" length="128" />
+      <field name="OwnerPassword" type="String" label="Owner Password" isVirtual="true" length="128" />
+      <field name="OwnerPasswordConfirmation" type="String" label="Owner Password Confirmation" isVirtual="true" length="128" />
     </fields>
     <views>
       <view id="grid1" type="Grid" commandId="command1" label="Organization">
@@ -635,6 +638,9 @@ from "dbo"."Organization" "Organization"
             <dataFields>
               <dataField fieldName="ID" columns="15" />
               <dataField fieldName="Name" columns="50" />
+              <dataField fieldName="OwnerEmail"></dataField>
+              <dataField fieldName="OwnerPassword" textMode="Password"></dataField>
+              <dataField fieldName="OwnerPasswordConfirmation" textMode="Password"></dataField>
             </dataFields>
           </category>
         </categories>
@@ -699,120 +705,10 @@ from "dbo"."Organization" "Organization"
         <action id="a7" whenLastCommandName="New" commandName="Cancel" />
       </actionGroup>
     </actions>
-  </dataController>
-  <dataController name="Organization1" conflictDetection="overwriteChanges" label="Organization1" nativeSchema="dbo" nativeTableName="Organization">
-    <commands>
-      <command id="command1" type="Text">
-        <text>
-select
-	"Organization"."Id" "ID"
-	,"Organization"."Name" "Name"
-from "dbo"."Organization" "Organization"
-</text>
-      </command>
-      <command id="IdUniqueIdentifierCommand" type="Text" event="Inserting">
-        <text>select newid()</text>
-        <output>
-          <fieldOutput fieldName="ID" />
-        </output>
-      </command>
-    </commands>
-    <fields>
-      <field name="ID" type="Guid" allowNulls="false" isPrimaryKey="true" label="Id" />
-      <field name="Name" type="String" allowNulls="false" label="Name" length="50" showInSummary="true" />
-    </fields>
-    <views>
-      <view id="grid1" type="Grid" commandId="command1" label="Organization1">
-        <headerText>$DefaultGridViewDescription</headerText>
-        <dataFields>
-          <dataField fieldName="ID" columns="15" />
-          <dataField fieldName="Name" columns="50" />
-        </dataFields>
-      </view>
-      <view id="editForm1" type="Form" commandId="command1" label="Review Organization1">
-        <headerText>$DefaultEditViewDescription</headerText>
-        <categories>
-          <category id="c1" headerText="Organization1">
-            <description>$DefaultEditDescription</description>
-            <dataFields>
-              <dataField fieldName="ID" columns="15" />
-              <dataField fieldName="Name" columns="50" />
-            </dataFields>
-          </category>
-        </categories>
-      </view>
-      <view id="createForm1" type="Form" commandId="command1" label="New Organization1">
-        <headerText>$DefaultCreateViewDescription</headerText>
-        <categories>
-          <category id="c1">
-            <description>$DefaultNewDescription</description>
-            <dataFields>
-              <dataField fieldName="ID" columns="15" />
-              <dataField fieldName="Name" columns="50" />
-            </dataFields>
-          </category>
-        </categories>
-      </view>
-    </views>
-    <actions>
-      <actionGroup id="ag1" scope="Grid">
-        <action id="a1" commandName="Select" commandArgument="editForm1" />
-        <action id="a2" commandName="Edit" />
-        <action id="a3" commandName="Delete" />
-        <action id="a6" />
-        <action id="a7" commandName="New" commandArgument="grid1" />
-        <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
-      </actionGroup>
-      <actionGroup id="ag2" scope="Form">
-        <action id="a1" commandName="Edit" />
-        <action id="a2" commandName="Delete" />
-        <action id="a3" commandName="Cancel" />
-        <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
-        <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
-        <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
-        <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
-        <action id="a8" whenLastCommandName="New" commandName="Cancel" />
-        <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
-        <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
-        <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
-        <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
-      </actionGroup>
-      <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
-        <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
-      </actionGroup>
-      <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
-        <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
-        <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
-      </actionGroup>
-      <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
-        <action id="a1" commandName="ExportCsv" />
-        <action id="a2" />
-        <action id="a3" commandName="ExportRowset" />
-        <action id="a4" commandName="ExportRss" />
-        <action id="a5" />
-        <action id="a6" commandName="Import" commandArgument="createForm1" />
-        <action id="a7" commandName="DataSheet" />
-        <action id="a8" commandName="Grid" />
-      </actionGroup>
-      <actionGroup id="ag6" scope="ActionBar" headerText="Record">
-        <action id="a1" whenLastCommandName="Edit" commandName="Update" />
-        <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
-        <action id="a3" whenLastCommandName="New" commandName="Insert" />
-        <action id="a4" whenLastCommandName="New" commandName="Cancel" />
-      </actionGroup>
-      <actionGroup id="ag7" scope="ActionBar" headerText="Report">
-        <action id="a1" commandName="ReportAsPdf" />
-        <action id="a2" commandName="ReportAsImage" />
-        <action id="a3" commandName="ReportAsExcel" />
-        <action id="a4" commandName="ReportAsWord" />
-      </actionGroup>
-      <actionGroup id="ag8" scope="Row">
-        <action id="a4" whenLastCommandName="Edit" commandName="Update" />
-        <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
-        <action id="a6" whenLastCommandName="New" commandName="Insert" />
-        <action id="a7" whenLastCommandName="New" commandName="Cancel" />
-      </actionGroup>
-    </actions>
+    <businessRules>
+      <rule id="r100" commandName="Insert" type="Code" phase="Before" />
+      <rule id="r101" commandName="Insert" type="Code" phase="After" />
+    </businessRules>
   </dataController>
   <dataController name="Receipt" conflictDetection="overwriteChanges" label="Receipt" nativeSchema="dbo" nativeTableName="Receipt">
     <commands>
@@ -959,174 +855,9 @@ from "dbo"."Receipt" "Receipt"
         <action id="a7" whenLastCommandName="New" commandName="Cancel" />
       </actionGroup>
     </actions>
-  </dataController>
-  <dataController name="Receipt1" conflictDetection="overwriteChanges" label="Receipt1" nativeSchema="dbo" nativeTableName="Receipt">
-    <commands>
-      <command id="command1" type="Text">
-        <text>
-select
-	"Receipt"."Id" "ID"
-	,"Receipt"."Vendor" "Vendor"
-	,"Receipt"."UnitPrice" "UnitPrice"
-	,"Receipt"."Quantity" "Quantity"
-	,"Receipt"."Total" "Total"
-	,"Receipt"."Category" "Category"
-	,"Receipt"."CreatedOn" "CreatedOn"
-	,"Receipt"."CreatedBy" "CreatedBy"
-	,"CreatedBy"."Login" "CreatedByLogin"
-	,"CreatedByOrganization"."Name" "CreatedByOrganizationName"
-	,"CreatedByBranch"."Name" "CreatedByBranchName"
-	,"Receipt"."OrganizationId" "OrganizationID"
-	,"Organization"."Name" "OrganizationName"
-	,"Receipt"."Picture" "Picture"
-from "dbo"."Receipt" "Receipt"
-	left join "dbo"."User" "CreatedBy" on "Receipt"."CreatedBy" = "CreatedBy"."Id"
-	left join "dbo"."Organization" "CreatedByOrganization" on "CreatedBy"."OrganizationId" = "CreatedByOrganization"."Id"
-	left join "dbo"."Branch" "CreatedByBranch" on "CreatedBy"."BranchId" = "CreatedByBranch"."Id"
-	left join "dbo"."Organization" "Organization" on "Receipt"."OrganizationId" = "Organization"."Id"
-</text>
-      </command>
-    </commands>
-    <fields>
-      <field name="ID" type="Guid" allowNulls="false" label="Id" showInSummary="true" />
-      <field name="Vendor" type="String" label="Vendor" length="50" showInSummary="true" />
-      <field name="UnitPrice" type="Decimal" allowNulls="false" dataFormatString="c" label="Unit Price" showInSummary="true" />
-      <field name="Quantity" type="Int32" allowNulls="false" label="Quantity" showInSummary="true" />
-      <field name="Total" type="Decimal" allowNulls="false" dataFormatString="c" label="Total" showInSummary="true" />
-      <field name="Category" type="String" label="Category" length="50" />
-      <field name="CreatedOn" type="DateTime" allowNulls="false" dataFormatString="g" label="Created On" />
-      <field name="CreatedBy" type="Guid" allowNulls="false" label="Created By">
-        <items style="Lookup" dataController="User" newDataView="createForm1" dataValueField="ID" dataTextField="ManagerLogin" copy="CreatedByOrganizationName=ManagerBranchName, CreatedByBranchName=ManagerBranchName" />
-      </field>
-      <field name="CreatedByLogin" type="String" readOnly="true" label="Created By Login" length="128" />
-      <field name="CreatedByOrganizationName" type="String" readOnly="true" label="Created By Organization Name" length="50" />
-      <field name="CreatedByBranchName" type="String" readOnly="true" label="Created By Branch Name" length="128" />
-      <field name="OrganizationID" type="Guid" allowNulls="false" label="Organization Id">
-        <items style="Lookup" dataController="Organization" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
-      </field>
-      <field name="OrganizationName" type="String" readOnly="true" label="Organization Name" length="50" />
-      <field name="Picture" type="Byte[]" onDemand="true" sourceFields="" onDemandHandler="ReceiptPicture" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Picture" />
-    </fields>
-    <views>
-      <view id="grid1" type="Grid" commandId="command1" label="Receipt1">
-        <headerText>$DefaultGridViewDescription</headerText>
-        <dataFields>
-          <dataField fieldName="ID" columns="15" />
-          <dataField fieldName="Vendor" columns="50" />
-          <dataField fieldName="UnitPrice" columns="15" />
-          <dataField fieldName="Quantity" columns="15" />
-          <dataField fieldName="Total" columns="15" />
-          <dataField fieldName="Category" columns="50" />
-          <dataField fieldName="CreatedOn" columns="20" />
-          <dataField fieldName="CreatedBy" aliasFieldName="CreatedByLogin" />
-          <dataField fieldName="CreatedByOrganizationName" columns="50" />
-          <dataField fieldName="CreatedByBranchName" />
-          <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
-          <dataField fieldName="Picture" columns="15" />
-        </dataFields>
-      </view>
-      <view id="editForm1" type="Form" commandId="command1" label="Review Receipt1">
-        <headerText>$DefaultEditViewDescription</headerText>
-        <categories>
-          <category id="c1" headerText="Receipt1">
-            <description>$DefaultEditDescription</description>
-            <dataFields>
-              <dataField fieldName="ID" columns="15" />
-              <dataField fieldName="Vendor" columns="50" />
-              <dataField fieldName="UnitPrice" columns="15" />
-              <dataField fieldName="Quantity" columns="15" />
-              <dataField fieldName="Total" columns="15" />
-              <dataField fieldName="Category" columns="50" />
-              <dataField fieldName="CreatedOn" columns="20" />
-              <dataField fieldName="CreatedBy" aliasFieldName="CreatedByLogin" />
-              <dataField fieldName="CreatedByOrganizationName" columns="50" />
-              <dataField fieldName="CreatedByBranchName" />
-              <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
-              <dataField fieldName="Picture" columns="15" />
-            </dataFields>
-          </category>
-        </categories>
-      </view>
-      <view id="createForm1" type="Form" commandId="command1" label="New Receipt1">
-        <headerText>$DefaultCreateViewDescription</headerText>
-        <categories>
-          <category id="c1">
-            <description>$DefaultNewDescription</description>
-            <dataFields>
-              <dataField fieldName="ID" columns="15" />
-              <dataField fieldName="Vendor" columns="50" />
-              <dataField fieldName="UnitPrice" columns="15" />
-              <dataField fieldName="Quantity" columns="15" />
-              <dataField fieldName="Total" columns="15" />
-              <dataField fieldName="Category" columns="50" />
-              <dataField fieldName="CreatedOn" columns="20" />
-              <dataField fieldName="CreatedBy" aliasFieldName="CreatedByLogin" />
-              <dataField fieldName="CreatedByOrganizationName" columns="50" />
-              <dataField fieldName="CreatedByBranchName" />
-              <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
-              <dataField fieldName="Picture" columns="15" />
-            </dataFields>
-          </category>
-        </categories>
-      </view>
-    </views>
-    <actions>
-      <actionGroup id="ag1" scope="Grid">
-        <action id="a1" commandName="Select" commandArgument="editForm1" />
-        <action id="a2" commandName="Edit" />
-        <action id="a3" commandName="Delete" />
-        <action id="a6" />
-        <action id="a7" commandName="New" commandArgument="grid1" />
-        <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
-      </actionGroup>
-      <actionGroup id="ag2" scope="Form">
-        <action id="a1" commandName="Edit" />
-        <action id="a2" commandName="Delete" />
-        <action id="a3" commandName="Cancel" />
-        <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
-        <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
-        <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
-        <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
-        <action id="a8" whenLastCommandName="New" commandName="Cancel" />
-        <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
-        <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
-        <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
-        <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
-      </actionGroup>
-      <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
-        <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
-      </actionGroup>
-      <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
-        <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
-        <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
-      </actionGroup>
-      <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
-        <action id="a1" commandName="ExportCsv" />
-        <action id="a2" />
-        <action id="a3" commandName="ExportRowset" />
-        <action id="a4" commandName="ExportRss" />
-        <action id="a7" commandName="DataSheet" />
-        <action id="a8" commandName="Grid" />
-      </actionGroup>
-      <actionGroup id="ag6" scope="ActionBar" headerText="Record">
-        <action id="a1" whenLastCommandName="Edit" commandName="Update" />
-        <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
-        <action id="a3" whenLastCommandName="New" commandName="Insert" />
-        <action id="a4" whenLastCommandName="New" commandName="Cancel" />
-      </actionGroup>
-      <actionGroup id="ag7" scope="ActionBar" headerText="Report">
-        <action id="a1" commandName="ReportAsPdf" />
-        <action id="a2" commandName="ReportAsImage" />
-        <action id="a3" commandName="ReportAsExcel" />
-        <action id="a4" commandName="ReportAsWord" />
-      </actionGroup>
-      <actionGroup id="ag8" scope="Row">
-        <action id="a4" whenLastCommandName="Edit" commandName="Update" />
-        <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
-        <action id="a6" whenLastCommandName="New" commandName="Insert" />
-        <action id="a7" whenLastCommandName="New" commandName="Cancel" />
-      </actionGroup>
-    </actions>
+    <businessRules>
+      <rule id="r100" commandName="Insert" type="Sql" phase="Before">set @OrganizationId = @BusinessRules_OrganizationID</rule>
+    </businessRules>
   </dataController>
   <dataController name="Role" conflictDetection="overwriteChanges" label="Role" nativeSchema="dbo" nativeTableName="Role">
     <commands>
@@ -1619,6 +1350,8 @@ select
 	,"User"."ModifiedBy" "ModifiedBy"
 	,"User"."ValidFrom" "ValidFrom"
 	,"User"."ValidTo" "ValidTo"
+	,"User"."comment" "Comment"
+	,"User"."OrganizationId" "OrganizationId"
 from "dbo"."User" "User"
 	left join "dbo"."User" "Manager" on "User"."ManagerId" = "Manager"."Id"
 	left join "dbo"."Branch" "ManagerBranch" on "Manager"."BranchId" = "ManagerBranch"."Id"
@@ -1674,10 +1407,15 @@ from "dbo"."User" "User"
       <field name="ModifiedBy" type="String" allowNulls="false" default="(suser_sname())" label="Modified By" length="128" />
       <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" readOnly="true" />
       <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" readOnly="true" />
+      <field name="Comment" type="String" allowQBE="false" allowSorting="false" label="Comment" />
+      <field name="OrganizationId" type="Guid" label="Organization Id" />
       <field name="Roles" type="String" label="Roles">
         <items style="CheckBoxList" dataController="Role" targetController="HistorydboUserRole" />
       </field>
       <field name="PasswordConfirmation" type="String" label="Password Confirmation" isVirtual="true" length="50" />
+      <field name="Receipt" type="DataView" label="Receipt">
+        <dataView controller="Receipt" view="grid1" />
+      </field>
     </fields>
     <views>
       <view id="grid1" type="Grid" commandId="command1" label="User">
@@ -1717,6 +1455,8 @@ from "dbo"."User" "User"
           <dataField fieldName="ModifiedBy" />
           <dataField fieldName="ValidFrom" columns="10" />
           <dataField fieldName="ValidTo" columns="10" />
+          <dataField fieldName="Comment" rows="5" />
+          <dataField fieldName="OrganizationId" columns="15" />
         </dataFields>
       </view>
       <view id="editForm1" type="Form" commandId="command1" label="Review User">
@@ -1760,7 +1500,10 @@ from "dbo"."User" "User"
               <dataField fieldName="ModifiedBy" />
               <dataField fieldName="ValidFrom" columns="10" />
               <dataField fieldName="ValidTo" columns="10" />
+              <dataField fieldName="Comment" rows="5" />
+              <dataField fieldName="OrganizationId" columns="15" />
               <dataField fieldName="Roles" rows="5" />
+              <dataField fieldName="Receipt" columns="15" />
             </dataFields>
           </category>
         </categories>
@@ -1806,6 +1549,8 @@ from "dbo"."User" "User"
               <dataField fieldName="ModifiedBy" />
               <dataField fieldName="ValidFrom" columns="10" />
               <dataField fieldName="ValidTo" columns="10" />
+              <dataField fieldName="Comment" rows="5" />
+              <dataField fieldName="OrganizationId" columns="15" />
               <dataField fieldName="Roles" rows="5" />
             </dataFields>
           </category>
@@ -3635,6 +3380,15 @@ from "History-dbo"."UserRole" "UserRole"
               <dataField fieldName="PasswordAnswer" textMode="Password">
                 <headerText>^MaskedPasswordAnswer^Password Answer (not displayed for your protection)^MaskedPasswordAnswer^</headerText>
               </dataField>
+            </dataFields>
+          </category>
+        </categories>
+      </view>
+      <view id="agreeForm" type="Form" label="agree Form">
+        <categories>
+          <category id="c1" headerText="My Profile">
+            <dataFields>
+              <dataField fieldName="UserName" rows="5" />
             </dataFields>
           </category>
         </categories>

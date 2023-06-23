@@ -629,6 +629,7 @@ namespace Argon2Id.Data
                 if (rules.CompleteConfiguration())
                     ResetViewPage(page);
             }
+            Argon2Id.Security.EventTracker.Process(page, request);
             if (rules != null)
                 rules.AfterSelect(request);
             else
@@ -751,6 +752,7 @@ namespace Argon2Id.Data
                 EnsureFieldValues(args);
                 if (args.SqlCommandType != CommandConfigurationType.None)
                 {
+                    Argon2Id.Security.EventTracker.Process(args, _config);
                     if (args.IsBatchEditOrDelete)
                     {
                         var page = CreateViewPage();

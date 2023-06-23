@@ -12,13 +12,12 @@
     <siteMapNode title="Historydbo User Role" description="View Historydbo User Role" url="~/pages/historydbo-user-role" />
     <siteMapNode title="Account" description="View Account" url="~/pages/account" />
     <siteMapNode title="Receipt" description="View Receipt" url="~/pages/receipt" />
-    <siteMapNode title="Organization" description="View Organization" url="~/pages/organization" />
-    <siteMapNode title="Organization1" description="View Organization1" url="~/pages/organization-1" />
-    <siteMapNode title="Receipt1" description="View Receipt1" url="~/pages/receipt-1" />
+    <siteMapNode title="Organization" description="View Organization" url="~/pages/organization" roles="Administrators" />
     <siteMapNode title="Site Content" description="View Site Content" url="~/pages/site-content" roles="Administrators, Content Editors, Developers" />
-    <siteMapNode title="System" description="" roles="*">
-      <siteMapNode title="User Role" description="View User Role" url="~/pages/user-role" />
-      <siteMapNode title="Role" description="View Role" url="~/pages/role" />
+    <siteMapNode title="System" description="" roles="Administrators">
+      <siteMapNode title="User Role" description="View User Role" url="~/pages/user-role" roles="Administrators" />
+      <siteMapNode title="Role" description="View Role" url="~/pages/role" roles="Administrators" />
     </siteMapNode>
+    <siteMapNode title="EULA" description="" url="~/pages/eula" roles="*" />
   </siteMapNode>
 </siteMap>
