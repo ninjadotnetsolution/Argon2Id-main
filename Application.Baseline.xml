@@ -1,0 +1,227 @@
+<application snapshot="false" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model">
+  <pages>
+    <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
+      <containers>
+        <container id="container1" flow="NewRow" />
+        <container id="container2" flow="NewColumn" />
+      </containers>
+      <controls>
+        <control id="control1" name="TableOfContents" container="container1" />
+        <control id="control2" name="Welcome" container="container2" />
+      </controls>
+    </page>
+    <page name="UserRole" title="User Role" description="View User Role" index="1010" path="User Role">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="UserRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows user role management.</about>
+    </page>
+    <page name="Role" title="Role" description="View Role" index="1020" path="Role">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Role" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows role management.</about>
+    </page>
+    <page name="Branch" title="Branch" description="View Branch" index="1030" path="Branch">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Branch" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows branch management.</about>
+    </page>
+    <page name="User" title="User" description="View User" index="1040" path="User">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="User" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows user management.</about>
+    </page>
+    <page name="HistorydboBranch" title="Historydbo Branch" description="View Historydbo Branch" index="1050" path="Historydbo Branch">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboBranch" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo branch management.</about>
+    </page>
+    <page name="HistorydboAccount" title="Historydbo Account" description="View Historydbo Account" index="1060" path="Historydbo Account">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboAccount" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo account management.</about>
+    </page>
+    <page name="HistorydboRole" title="Historydbo Role" description="View Historydbo Role" index="1070" path="Historydbo Role">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo role management.</about>
+    </page>
+    <page name="HistorydboSiteContent" title="Historydbo Site Content" description="View Historydbo Site Content" index="1080" path="Historydbo Site Content">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboSiteContent" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo site content management.</about>
+    </page>
+    <page name="HistorydboUser" title="Historydbo User" description="View Historydbo User" index="1090" path="Historydbo User">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboUser" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo user management.</about>
+    </page>
+    <page name="HistorydboUserRole" title="Historydbo User Role" description="View Historydbo User Role" index="1100" path="Historydbo User Role">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboUserRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo user role management.</about>
+    </page>
+    <page name="Account" title="Account" description="View Account" index="1110" path="Account">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Account" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows account management.</about>
+    </page>
+    <page name="SiteContent" title="Site Content" description="View Site Content" index="1120" path="Site Content" roles="Administrators, Content Editors, Developers">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="SiteContent" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows site content management.</about>
+    </page>
+  </pages>
+  <userControls>
+    <userControl name="TableOfContents" prefix="uc" generate="Always">
+      <body>
+                
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;div class="ParaInfo"&gt;
+        ^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^
+    &lt;/div&gt;
+    &lt;div class="ParaHeader"&gt;
+        ^TocHeader^Site Map^TocHeader^
+    &lt;/div&gt;
+    &lt;div data-role="placeholder" data-placeholder="site-map"&gt;&lt;/div&gt;
+
+    &lt;div id="app-sitemap" data-app-role="page" data-activator="Button|^TocHeader^Site Map^TocHeader^"&gt;
+        &lt;p&gt;
+            &lt;span&gt;^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^&lt;/span&gt;
+        &lt;/p&gt;
+        &lt;div data-app-role="sitemap"&gt;&lt;/div&gt;
+        &lt;p&gt;
+            &lt;br /&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+              </body>
+    </userControl>
+    <userControl name="Welcome" prefix="uc" generate="Always">
+      <body>
+                  
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;body&gt;
+                
+&lt;div style="padding-left:8px"&gt;&lt;div class="ParaInfo"&gt;
+        ^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/div&gt;
+&lt;div class="ParaHeader"&gt;
+    ^SignInHeader^Instructions^SignInHeader^
+&lt;/div&gt;
+&lt;div class="ParaText"&gt;
+    ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+    if membership option has been selected for this application.^SignInPara1^
+&lt;/div&gt;
+                  
+&lt;div class="ParaText"&gt;
+    ^SignInPara3^Move the mouse pointer over the link &lt;i&gt;Login to this web site&lt;/i&gt; on the right-hand side
+    at the top of the page and sign in with one of the accounts listed below.^SignInPara3^&lt;/div&gt;
+                
+&lt;div class="ParaText"&gt;
+    &lt;div style="border: solid 1px black; background-color: InfoBackground; padding: 8px;
+        float: left;"&gt;
+        ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+        &lt;br /&gt;
+        &lt;br /&gt;
+        ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div style="clear:both;margin-bottom:8px"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="app-welcome" data-app-role="page" data-activator="Button|^SignInHeader^Instructions^SignInHeader^" data-activator-description="^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^"&gt;
+      &lt;p&gt;^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/p&gt;
+      &lt;p&gt;
+          ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+  if membership option has been selected for this application.^SignInPara1^
+      &lt;/p&gt;
+
+      &lt;p&gt;
+          ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+  web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+  access all areas of the web site with the exception of membership manager.^SignInPara2^
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;&lt;a href="#" data-role="button" data-inline="true" data-theme="b" data-app-role="loginstatus" data-icon="lock"&gt;Login Status&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+                  
+&lt;/body&gt;
+&lt;/html&gt;
+                </body>
+    </userControl>
+  </userControls>
+</application>

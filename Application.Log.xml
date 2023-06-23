@@ -1,0 +1,28 @@
+<log xmlns="urn:schemas-codeontime-com:xml-builder" xmlns:aquarium="urn:schemas-codeontime-com:data-aquarium" xmlns:app="urn:schemas-codeontime-com:data-aquarium-application" xmlns:a="urn:schemas-codeontime-com:data-aquarium">
+  <c y="NodeSet" t="2023-06-23T07:15:07">
+    <pages />
+    <insert type="page">
+      <Name>System</Name>
+      <Url>about:blank</Url>
+      <Generate>Always</Generate>
+      <UseExtenders>false</UseExtenders>
+      <Offline>false</Offline>
+      <Kiosk>false</Kiosk>
+      <Path>System</Path>
+      <Title>System</Title>
+      <Roles>*</Roles>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2023-06-23T07:15:15">
+    <page name="System" />
+    <move>
+      <page name="UserRole" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2023-06-23T07:15:15">
+    <page name="System" />
+    <move>
+      <page name="Role" />
+    </move>
+  </c>
+</log>
