@@ -120,7 +120,47 @@
       <controls />
       <about>This page allows account management.</about>
     </page>
-    <page name="SiteContent" title="Site Content" description="View Site Content" index="1120" path="Site Content" roles="Administrators, Content Editors, Developers">
+    <page name="Receipt" title="Receipt" description="View Receipt" index="1120" path="Receipt">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Receipt" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows receipt management.</about>
+    </page>
+    <page name="Organization" title="Organization" description="View Organization" index="1130" path="Organization">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Organization" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows organization management.</about>
+    </page>
+    <page name="Organization1" title="Organization1" description="View Organization1" index="1140" path="Organization1">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Organization1" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows organization1 management.</about>
+    </page>
+    <page name="Receipt1" title="Receipt1" description="View Receipt1" index="1150" path="Receipt1">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Receipt1" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows receipt1 management.</about>
+    </page>
+    <page name="SiteContent" title="Site Content" description="View Site Content" index="1160" path="Site Content" roles="Administrators, Content Editors, Developers">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>

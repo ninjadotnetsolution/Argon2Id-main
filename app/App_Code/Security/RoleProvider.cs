@@ -58,16 +58,16 @@ namespace Argon2Id.Security
 
         static ApplicationRoleProviderBase()
         {
-            Statements[RoleProviderSqlStatement.AddUserToRole] = "\r\ninsert into [UserRole](UserId, RoleId) \r\nvalues (\r\n     (select Id from User where User_Name=@UserName) \r\n    ,(select Id from [Role] where Name=@RoleName)\r\n    \r\n)";
-            Statements[RoleProviderSqlStatement.CreateRole] = "insert into [Role] (Name) values (@RoleName)";
-            Statements[RoleProviderSqlStatement.DeleteRole] = "delete from [Role] where Name = @RoleName";
-            Statements[RoleProviderSqlStatement.DeleteRoleUsers] = "delete from [UserRole] where RoleId in (select Id from [Role] where Name = @RoleName)";
-            Statements[RoleProviderSqlStatement.GetAllRoles] = "select Name RoleName from [Role]";
-            Statements[RoleProviderSqlStatement.GetRolesForUser] = "\r\nselect Roles.Name RoleName from [Role] Roles \r\ninner join UserRole UserRoles on Roles.Id = UserRoles.RoleId \r\ninner join [User] Users on Users.Id = UserRoles.UserId\r\nwhere Users.User_Name = @UserName";
-            Statements[RoleProviderSqlStatement.GetUsersInRole] = "select User_Name UserName from User where Id in (select UserId from [UserRole] where RoleId in (select Id from [Role] where Name = @RoleName))";
-            Statements[RoleProviderSqlStatement.IsUserInRole] = "\r\nselect count(*) from [UserRole]\r\nwhere\r\n    UserId in (select Id from User where User_Name = @UserName) and \r\n    RoleId in (select Id from [Role] where Name = @RoleName)";
-            Statements[RoleProviderSqlStatement.RemoveUserFromRole] = "\r\ndelete from [UserRole]\r\nwhere\r\n   UserId in (select Id from User where User_Name = @UserName) and\r\n   RoleId in (select Id from [Role] where Name = @RoleName)";
-            Statements[RoleProviderSqlStatement.RoleExists] = "select count(*) from [Role] where Name = @RoleName";
+            Statements[RoleProviderSqlStatement.AddUserToRole] = "\r\ninsert into UserRole(UserId, RoleId) \r\nvalues (\r\n     (select Id from User where User_Name=@UserName) \r\n    ,(select Id from Role where Name=@RoleName)\r\n    \r\n)";
+            Statements[RoleProviderSqlStatement.CreateRole] = "insert into Role (Name) values (@RoleName)";
+            Statements[RoleProviderSqlStatement.DeleteRole] = "delete from Role where Name = @RoleName";
+            Statements[RoleProviderSqlStatement.DeleteRoleUsers] = "delete from UserRole where RoleId in (select Id from Role where Name = @RoleName)";
+            Statements[RoleProviderSqlStatement.GetAllRoles] = "select Name RoleName from Role";
+            Statements[RoleProviderSqlStatement.GetRolesForUser] = "\r\nselect Roles.Name RoleName from Role Roles \r\ninner join UserRole UserRoles on Roles.Id = UserRoles.RoleId \r\ninner join User Users on Users.Id = UserRoles.UserId\r\nwhere Users.User_Name = @UserName";
+            Statements[RoleProviderSqlStatement.GetUsersInRole] = "select User_Name UserName from User where Id in (select UserId from UserRole where RoleId in (select Id from Role where Name = @RoleName))";
+            Statements[RoleProviderSqlStatement.IsUserInRole] = "\r\nselect count(*) from UserRole\r\nwhere\r\n    UserId in (select Id from User where User_Name = @UserName) and \r\n    RoleId in (select Id from Role where Name = @RoleName)";
+            Statements[RoleProviderSqlStatement.RemoveUserFromRole] = "\r\ndelete from UserRole\r\nwhere\r\n   UserId in (select Id from User where User_Name = @UserName) and\r\n   RoleId in (select Id from Role where Name = @RoleName)";
+            Statements[RoleProviderSqlStatement.RoleExists] = "select count(*) from Role where Name = @RoleName";
             Statements[RoleProviderSqlStatement.FindUsersInRole] = "\r\nselect Users.User_Name UserName from User Users\r\ninner join UserRole UserRoles on Users.Id= UserRoles.UserId \r\ninner join Role Roles on UserRoles.RoleId = Roles.Id\r\nwhere \r\n\tUsers.User_Name like @UserName and \r\n\tRoles.Name = @RoleName";
         }
 

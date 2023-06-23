@@ -109,28 +109,28 @@ namespace Argon2Id.Security
 
         static ApplicationMembershipProviderBase()
         {
-            Statements[MembershipProviderSqlStatement.ChangePassword] = "update [User] set Password = @Password where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.ChangePasswordQuestionAndAnswer] = "update [User] set Column_users_passwordquestion_IsNotMapped = @PasswordQuestion, Column_users_passwordanswer_IsNotMapped = @PasswordAnswer where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.CreateUser] = "\r\ninsert into [User]\r\n(\r\n   User_Name\r\n  ,Password\r\n  ,eMail, Login)\r\nvalues(\r\n   @UserName\r\n  ,@Password\r\n  ,@Email, @Login)";
-            Statements[MembershipProviderSqlStatement.DeleteUser] = "delete from [User] where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.CountAllUsers] = "select count(*) from [User]";
-            Statements[MembershipProviderSqlStatement.GetAllUsers] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name UserName\r\n  ,eMail Email\r\nfrom [User] \r\norder by User_Name asc";
-            Statements[MembershipProviderSqlStatement.GetNumberOfUsersOnline] = "select count(*) from [User] where Column_users_lastactivitydate_IsNotMapped >= @CompareDate";
-            Statements[MembershipProviderSqlStatement.GetPassword] = "select Password Password from [User] where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.GetUser] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name UserName\r\n  ,eMail Email\r\nfrom [User] \r\nwhere User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.UpdateLastUserActivity] = "update [User] set Column_users_lastactivitydate_IsNotMapped = @LastActivityDate where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.GetUserByProviderKey] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom [User] \r\nwhere Id = @UserID";
-            Statements[MembershipProviderSqlStatement.UpdateUserLockStatus] = "update [User] set Column_users_islockedout_IsNotMapped = @IsLockedOut where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.GetUserNameByEmail] = "select User_Name Username from [User] where eMail = @Email";
-            Statements[MembershipProviderSqlStatement.ResetPassword] = "update [User] set Password = @Password where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.UpdateUser] = "update [User] set eMail = @Email where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.UpdateLastLoginDate] = "update [User] set Column_users_lastlogindate_IsNotMapped = @LastLoginDate where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.UpdateFailedPasswordAttempt] = "update [User] set  where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.UpdateFailedPasswordAnswerAttempt] = "update [User] set  where User_Name = @UserName";
-            Statements[MembershipProviderSqlStatement.CountUsersByName] = "select count(*) from [User] where User_Name like @UserName";
-            Statements[MembershipProviderSqlStatement.FindUsersByName] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom [User] \r\nwhere User_Name like @UserName\r\norder by User_Name asc";
-            Statements[MembershipProviderSqlStatement.CountUsersByEmail] = "select count(*) from [User] where eMail like @Email";
-            Statements[MembershipProviderSqlStatement.FindUsersByEmail] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom [User] \r\nwhere eMail like @Email\r\norder by User_Name asc";
+            Statements[MembershipProviderSqlStatement.ChangePassword] = "update User set Password = @Password where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.ChangePasswordQuestionAndAnswer] = "update User set Column_users_passwordquestion_IsNotMapped = @PasswordQuestion, Column_users_passwordanswer_IsNotMapped = @PasswordAnswer where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.CreateUser] = "\r\ninsert into User\r\n(\r\n   User_Name\r\n  ,Password\r\n  ,eMail\r\n)\r\nvalues(\r\n   @UserName\r\n  ,@Password\r\n  ,@Email\r\n)";
+            Statements[MembershipProviderSqlStatement.DeleteUser] = "delete from User where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.CountAllUsers] = "select count(*) from User";
+            Statements[MembershipProviderSqlStatement.GetAllUsers] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name UserName\r\n  ,eMail Email\r\nfrom User \r\norder by User_Name asc";
+            Statements[MembershipProviderSqlStatement.GetNumberOfUsersOnline] = "select count(*) from User where Column_users_lastactivitydate_IsNotMapped >= @CompareDate";
+            Statements[MembershipProviderSqlStatement.GetPassword] = "select Password Password from User where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.GetUser] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name UserName\r\n  ,eMail Email\r\nfrom User \r\nwhere User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.UpdateLastUserActivity] = "update User set Column_users_lastactivitydate_IsNotMapped = @LastActivityDate where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.GetUserByProviderKey] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom User \r\nwhere Id = @UserID";
+            Statements[MembershipProviderSqlStatement.UpdateUserLockStatus] = "update User set Column_users_islockedout_IsNotMapped = @IsLockedOut where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.GetUserNameByEmail] = "select User_Name Username from User where eMail = @Email";
+            Statements[MembershipProviderSqlStatement.ResetPassword] = "update User set Password = @Password where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.UpdateUser] = "update User set eMail = @Email where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.UpdateLastLoginDate] = "update User set Column_users_lastlogindate_IsNotMapped = @LastLoginDate where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.UpdateFailedPasswordAttempt] = "update User set  where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.UpdateFailedPasswordAnswerAttempt] = "update User set  where User_Name = @UserName";
+            Statements[MembershipProviderSqlStatement.CountUsersByName] = "select count(*) from User where User_Name like @UserName";
+            Statements[MembershipProviderSqlStatement.FindUsersByName] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom User \r\nwhere User_Name like @UserName\r\norder by User_Name asc";
+            Statements[MembershipProviderSqlStatement.CountUsersByEmail] = "select count(*) from User where eMail like @Email";
+            Statements[MembershipProviderSqlStatement.FindUsersByEmail] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom User \r\nwhere eMail like @Email\r\norder by User_Name asc";
         }
 
         public virtual ConnectionStringSettings ConnectionStringSettings
@@ -385,7 +385,6 @@ namespace Argon2Id.Security
                     sql.AssignParameter("UserName", username);
                     sql.AssignParameter("Password", EncodePassword(password));
                     sql.AssignParameter("Email", email);
-                    sql.AssignParameter("Login", email+ creationDate);
                     if (sql.ExecuteNonQuery() > 0)
                     {
                         status = MembershipCreateStatus.Success;
