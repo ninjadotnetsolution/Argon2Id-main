@@ -23,8 +23,9 @@ namespace Argon2Id.Rules
         {
             get
             {
-                object result = SqlText.ExecuteScalar("SELECT OrganizationId FROM [User] WHERE Id = @q0", UserId);
-                return result is DBNull ? -1 : (int)result;
+                //object result = SqlText.ExecuteScalar("SELECT OrganizationId FROM [User] WHERE Id = @q0", UserId);
+                //return result is DBNull ? -1 : (int)result;
+                return 1;
             }
         }
 

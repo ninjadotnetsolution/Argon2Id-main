@@ -133,7 +133,6 @@ namespace Argon2Id.Security
             Statements[MembershipProviderSqlStatement.FindUsersByEmail] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom [User] \r\nwhere eMail like @Email\r\norder by User_Name asc";
 
 
-
         }
 
         public virtual ConnectionStringSettings ConnectionStringSettings

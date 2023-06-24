@@ -20,7 +20,7 @@ namespace Argon2Id.Rules
         public void r101Implementation(UserModel instance)
         {
             if (!UserIsInRole("Administrators"))
-                throw new Exception("Not allowed.");
+                Result.ShowAlert("Not allowed.");
         }
     }
 }

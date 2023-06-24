@@ -1,5 +1,5 @@
 <application snapshot="false" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model">
-  <pages>
+  <pages xmlns="urn:schemas-codeontime-com:data-aquarium-application">
     <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
       <containers>
         <container id="container1" flow="NewRow" />

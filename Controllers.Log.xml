@@ -1,370 +1,336 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<log xmlns:aquarium="urn:schemas-codeontime-com:data-aquarium" xmlns:a="urn:schemas-codeontime-com:data-aquarium" xmlns:bo="urn:schemas-codeontime-com:business-objects" xmlns="urn:schemas-codeontime-com:xml-builder">
-  <c y="NodeSet" t="2023-06-23T07:52:37">
+﻿<?xml version="1.0" encoding="utf-8"?><log xmlns:aquarium="urn:schemas-codeontime-com:data-aquarium" xmlns:a="urn:schemas-codeontime-com:data-aquarium" xmlns:bo="urn:schemas-codeontime-com:business-objects" xmlns="urn:schemas-codeontime-com:xml-builder"><c y="NodeSet" t="2023-06-23T07:52:37">
+  <controller name="User" />
+  <insert type="field">
+    <Name>Roles</Name>
+    <Type>String</Type>
+    <AllowNulls>true</AllowNulls>
+    <IsPrimaryKey>false</IsPrimaryKey>
+    <IsVirtual>false</IsVirtual>
+    <Computed>false</Computed>
+    <Calculated>false</Calculated>
+    <CausesCalculate>false</CausesCalculate>
+    <OnDemand>false</OnDemand>
+    <Label>Roles</Label>
+    <ReadOnly>false</ReadOnly>
+    <ShowInSummary>false</ShowInSummary>
+    <HtmlEncode>true</HtmlEncode>
+    <FormatOnClient>true</FormatOnClient>
+    <ItemsStyle>CheckBoxList</ItemsStyle>
+    <ItemsDataController>Role</ItemsDataController>
+    <ItemsTargetController>HistorydboUserRole</ItemsTargetController>
+    <SearchOnStart>false</SearchOnStart>
+    <AutoSelect>false</AutoSelect>
+    <ItemsLetters>false</ItemsLetters>
+    <AllowQBE>true</AllowQBE>
+    <AllowSorting>true</AllowSorting>
+    <MaskType>None</MaskType>
+    <AllowLEV>false</AllowLEV>
+  </insert>
+</c><c y="NodeSet" t="2023-06-23T07:52:54">
+  <controller name="User" />
+  <view id="createForm1" />
+  <move>
     <controller name="User" />
-    <insert type="field">
-      <Name>Roles</Name>
-      <Type>String</Type>
-      <AllowNulls>true</AllowNulls>
-      <IsPrimaryKey>false</IsPrimaryKey>
-      <IsVirtual>false</IsVirtual>
-      <Computed>false</Computed>
-      <Calculated>false</Calculated>
-      <CausesCalculate>false</CausesCalculate>
-      <OnDemand>false</OnDemand>
-      <Label>Roles</Label>
-      <ReadOnly>false</ReadOnly>
-      <ShowInSummary>false</ShowInSummary>
-      <HtmlEncode>true</HtmlEncode>
-      <FormatOnClient>true</FormatOnClient>
-      <ItemsStyle>CheckBoxList</ItemsStyle>
-      <ItemsDataController>Role</ItemsDataController>
-      <ItemsTargetController>HistorydboUserRole</ItemsTargetController>
-      <SearchOnStart>false</SearchOnStart>
-      <AutoSelect>false</AutoSelect>
-      <ItemsLetters>false</ItemsLetters>
-      <AllowQBE>true</AllowQBE>
-      <AllowSorting>true</AllowSorting>
-      <MaskType>None</MaskType>
-      <AllowLEV>false</AllowLEV>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:52:54">
+    <field name="Roles" />
+  </move>
+</c><c y="NodeSet" t="2023-06-23T07:53:02">
+  <controller name="User" />
+  <view id="editForm1" />
+  <move>
     <controller name="User" />
-    <view id="createForm1" />
-    <move>
-      <controller name="User" />
-      <field name="Roles" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:53:02">
+    <field name="Roles" />
+  </move>
+</c><c y="NodeSet" t="2023-06-23T07:54:05">
+  <controller name="User" />
+  <insert type="field">
+    <Name>PasswordConfirmation</Name>
+    <Type>String</Type>
+    <Length>50</Length>
+    <AllowNulls>true</AllowNulls>
+    <IsPrimaryKey>false</IsPrimaryKey>
+    <IsVirtual>true</IsVirtual>
+    <Computed>false</Computed>
+    <Calculated>false</Calculated>
+    <CausesCalculate>false</CausesCalculate>
+    <OnDemand>false</OnDemand>
+    <Label>Password Confirmation</Label>
+    <ReadOnly>false</ReadOnly>
+    <ShowInSummary>false</ShowInSummary>
+    <HtmlEncode>true</HtmlEncode>
+    <FormatOnClient>true</FormatOnClient>
+    <SearchOnStart>false</SearchOnStart>
+    <AutoSelect>false</AutoSelect>
+    <ItemsLetters>false</ItemsLetters>
+    <AllowQBE>true</AllowQBE>
+    <AllowSorting>true</AllowSorting>
+    <MaskType>None</MaskType>
+    <AllowLEV>false</AllowLEV>
+  </insert>
+</c><c y="NodeSet" t="2023-06-23T07:54:35">
+  <controller name="User" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <move>
     <controller name="User" />
-    <view id="editForm1" />
-    <move>
-      <controller name="User" />
-      <field name="Roles" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:54:05">
-    <controller name="User" />
-    <insert type="field">
-      <Name>PasswordConfirmation</Name>
-      <Type>String</Type>
-      <Length>50</Length>
-      <AllowNulls>true</AllowNulls>
-      <IsPrimaryKey>false</IsPrimaryKey>
-      <IsVirtual>true</IsVirtual>
-      <Computed>false</Computed>
-      <Calculated>false</Calculated>
-      <CausesCalculate>false</CausesCalculate>
-      <OnDemand>false</OnDemand>
-      <Label>Password Confirmation</Label>
-      <ReadOnly>false</ReadOnly>
-      <ShowInSummary>false</ShowInSummary>
-      <HtmlEncode>true</HtmlEncode>
-      <FormatOnClient>true</FormatOnClient>
-      <SearchOnStart>false</SearchOnStart>
-      <AutoSelect>false</AutoSelect>
-      <ItemsLetters>false</ItemsLetters>
-      <AllowQBE>true</AllowQBE>
-      <AllowSorting>true</AllowSorting>
-      <MaskType>None</MaskType>
-      <AllowLEV>false</AllowLEV>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:54:35">
-    <controller name="User" />
-    <view id="editForm1" />
-    <category id="c1" />
-    <move>
-      <controller name="User" />
-      <field name="PasswordConfirmation" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:54:44">
+    <field name="PasswordConfirmation" />
+  </move>
+</c><c y="NodeSet" t="2023-06-23T07:54:44">
+  <controller name="User" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Password" />
+  <after>
     <controller name="User" />
     <view id="editForm1" />
     <category id="c1" />
-    <dataField fieldName="Password" />
-    <after>
-      <controller name="User" />
-      <view id="editForm1" />
-      <category id="c1" />
-      <dataField fieldName="PasswordConfirmation" />
-    </after>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:54:50">
+    <dataField fieldName="PasswordConfirmation" />
+  </after>
+</c><c y="NodeSet" t="2023-06-23T07:54:50">
+  <controller name="User" />
+  <view id="createForm1" />
+  <move>
     <controller name="User" />
-    <view id="createForm1" />
-    <move>
-      <controller name="User" />
-      <field name="PasswordConfirmation" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:54:54">
+    <field name="PasswordConfirmation" />
+  </move>
+</c><c y="NodeSet" t="2023-06-23T07:54:54">
+  <controller name="User" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Password" />
+  <move>
     <controller name="User" />
     <view id="createForm1" />
     <category id="c1" />
-    <dataField fieldName="Password" />
-    <move>
-      <controller name="User" />
-      <view id="createForm1" />
-      <category id="c1" />
-      <dataField fieldName="PasswordConfirmation" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-23T07:57:43">
+    <dataField fieldName="PasswordConfirmation" />
+  </move>
+</c><c y="NodeSet" t="2023-06-23T07:57:43">
+  <controller name="User" />
+  <insert type="rule">
+    <Type>Code</Type>
+    <CommandName>Insert|Update</CommandName>
+    <Phase>Execute</Phase>
+  </insert>
+</c><c y="NodeSet" t="2023-06-23T08:16:28">
+  <controller name="User" />
+  <insert type="rule">
+    <Type>Code</Type>
+    <CommandName>Select</CommandName>
+    <Phase>Before</Phase>
+  </insert>
+</c><c y="NodeSet" t="2023-06-23T08:19:18">
+  <controller name="Role" />
+  <move>
     <controller name="User" />
-    <insert type="rule">
-      <Type>Code</Type>
-      <CommandName>Insert|Update</CommandName>
-      <Phase>Execute</Phase>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-23T08:16:28">
-    <controller name="User" />
-    <insert type="rule">
-      <Type>Code</Type>
-      <CommandName>Select</CommandName>
-      <Phase>Before</Phase>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-23T08:19:18">
+  </move>
+</c><c y="NodeSet" t="2023-06-23T08:19:55">
+  <controller name="Role" />
+  <view id="editForm1" />
+  <move>
     <controller name="Role" />
-    <move>
-      <controller name="User" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-23T08:19:55">
-    <controller name="Role" />
-    <view id="editForm1" />
-    <move>
-      <controller name="Role" />
-      <field name="User" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-23T08:20:37">
-    <controller name="Role" />
-    <insert type="rule">
-      <Type>Code</Type>
-      <CommandName>Select</CommandName>
-      <Phase>Before</Phase>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:18:08">
-    <controller name="Organization1" />
-    <delete />
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:18:08">
-    <controller name="Receipt1" />
-    <delete />
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:18:53">
+    <field name="User" />
+  </move>
+</c><c y="NodeSet" t="2023-06-23T08:20:37">
+  <controller name="Role" />
+  <insert type="rule">
+    <Type>Code</Type>
+    <CommandName>Select</CommandName>
+    <Phase>Before</Phase>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T00:18:08">
+  <controller name="Organization1" />
+  <delete />
+</c><c y="NodeSet" t="2023-06-24T00:18:08">
+  <controller name="Receipt1" />
+  <delete />
+</c><c y="NodeSet" t="2023-06-24T00:18:53">
+  <controller name="Organization" />
+  <insert type="field">
+    <Name>OwnerEmail</Name>
+    <Type>String</Type>
+    <Length>128</Length>
+    <AllowNulls>true</AllowNulls>
+    <IsPrimaryKey>false</IsPrimaryKey>
+    <IsVirtual>true</IsVirtual>
+    <Computed>false</Computed>
+    <Calculated>false</Calculated>
+    <CausesCalculate>false</CausesCalculate>
+    <OnDemand>false</OnDemand>
+    <Label>Owner Email</Label>
+    <ReadOnly>false</ReadOnly>
+    <ShowInSummary>false</ShowInSummary>
+    <HtmlEncode>true</HtmlEncode>
+    <FormatOnClient>true</FormatOnClient>
+    <SearchOnStart>false</SearchOnStart>
+    <AutoSelect>false</AutoSelect>
+    <ItemsLetters>false</ItemsLetters>
+    <AllowQBE>true</AllowQBE>
+    <AllowSorting>true</AllowSorting>
+    <MaskType>None</MaskType>
+    <AllowLEV>false</AllowLEV>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T00:19:20">
+  <controller name="Organization" />
+  <insert type="field">
+    <Name>OwnerPassword</Name>
+    <Type>String</Type>
+    <Length>128</Length>
+    <AllowNulls>true</AllowNulls>
+    <IsPrimaryKey>false</IsPrimaryKey>
+    <IsVirtual>true</IsVirtual>
+    <Computed>false</Computed>
+    <Calculated>false</Calculated>
+    <CausesCalculate>false</CausesCalculate>
+    <OnDemand>false</OnDemand>
+    <Label>Owner Password</Label>
+    <ReadOnly>false</ReadOnly>
+    <ShowInSummary>false</ShowInSummary>
+    <HtmlEncode>true</HtmlEncode>
+    <FormatOnClient>true</FormatOnClient>
+    <SearchOnStart>false</SearchOnStart>
+    <AutoSelect>false</AutoSelect>
+    <ItemsLetters>false</ItemsLetters>
+    <AllowQBE>true</AllowQBE>
+    <AllowSorting>true</AllowSorting>
+    <MaskType>None</MaskType>
+    <AllowLEV>false</AllowLEV>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T00:19:44">
+  <controller name="Organization" />
+  <insert type="field">
+    <Name>OwnerPasswordConfirmation</Name>
+    <Type>String</Type>
+    <Length>128</Length>
+    <AllowNulls>true</AllowNulls>
+    <IsPrimaryKey>false</IsPrimaryKey>
+    <IsVirtual>true</IsVirtual>
+    <Computed>false</Computed>
+    <Calculated>false</Calculated>
+    <CausesCalculate>false</CausesCalculate>
+    <OnDemand>false</OnDemand>
+    <Label>Owner Password Confirmation</Label>
+    <ReadOnly>false</ReadOnly>
+    <ShowInSummary>false</ShowInSummary>
+    <HtmlEncode>true</HtmlEncode>
+    <FormatOnClient>true</FormatOnClient>
+    <SearchOnStart>false</SearchOnStart>
+    <AutoSelect>false</AutoSelect>
+    <ItemsLetters>false</ItemsLetters>
+    <AllowQBE>true</AllowQBE>
+    <AllowSorting>true</AllowSorting>
+    <MaskType>None</MaskType>
+    <AllowLEV>false</AllowLEV>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T00:20:00">
+  <controller name="Organization" />
+  <view id="createForm1" />
+  <move>
     <controller name="Organization" />
-    <insert type="field">
-      <Name>OwnerEmail</Name>
-      <Type>String</Type>
-      <Length>128</Length>
-      <AllowNulls>true</AllowNulls>
-      <IsPrimaryKey>false</IsPrimaryKey>
-      <IsVirtual>true</IsVirtual>
-      <Computed>false</Computed>
-      <Calculated>false</Calculated>
-      <CausesCalculate>false</CausesCalculate>
-      <OnDemand>false</OnDemand>
-      <Label>Owner Email</Label>
-      <ReadOnly>false</ReadOnly>
-      <ShowInSummary>false</ShowInSummary>
-      <HtmlEncode>true</HtmlEncode>
-      <FormatOnClient>true</FormatOnClient>
-      <SearchOnStart>false</SearchOnStart>
-      <AutoSelect>false</AutoSelect>
-      <ItemsLetters>false</ItemsLetters>
-      <AllowQBE>true</AllowQBE>
-      <AllowSorting>true</AllowSorting>
-      <MaskType>None</MaskType>
-      <AllowLEV>false</AllowLEV>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:19:20">
+    <field name="OwnerEmail" />
+  </move>
+</c><c y="NodeSet" t="2023-06-24T00:20:00">
+  <controller name="Organization" />
+  <view id="createForm1" />
+  <move>
     <controller name="Organization" />
-    <insert type="field">
-      <Name>OwnerPassword</Name>
-      <Type>String</Type>
-      <Length>128</Length>
-      <AllowNulls>true</AllowNulls>
-      <IsPrimaryKey>false</IsPrimaryKey>
-      <IsVirtual>true</IsVirtual>
-      <Computed>false</Computed>
-      <Calculated>false</Calculated>
-      <CausesCalculate>false</CausesCalculate>
-      <OnDemand>false</OnDemand>
-      <Label>Owner Password</Label>
-      <ReadOnly>false</ReadOnly>
-      <ShowInSummary>false</ShowInSummary>
-      <HtmlEncode>true</HtmlEncode>
-      <FormatOnClient>true</FormatOnClient>
-      <SearchOnStart>false</SearchOnStart>
-      <AutoSelect>false</AutoSelect>
-      <ItemsLetters>false</ItemsLetters>
-      <AllowQBE>true</AllowQBE>
-      <AllowSorting>true</AllowSorting>
-      <MaskType>None</MaskType>
-      <AllowLEV>false</AllowLEV>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:19:44">
+    <field name="OwnerPassword" />
+  </move>
+</c><c y="NodeSet" t="2023-06-24T00:20:00">
+  <controller name="Organization" />
+  <view id="createForm1" />
+  <move>
     <controller name="Organization" />
-    <insert type="field">
-      <Name>OwnerPasswordConfirmation</Name>
-      <Type>String</Type>
-      <Length>128</Length>
-      <AllowNulls>true</AllowNulls>
-      <IsPrimaryKey>false</IsPrimaryKey>
-      <IsVirtual>true</IsVirtual>
-      <Computed>false</Computed>
-      <Calculated>false</Calculated>
-      <CausesCalculate>false</CausesCalculate>
-      <OnDemand>false</OnDemand>
-      <Label>Owner Password Confirmation</Label>
-      <ReadOnly>false</ReadOnly>
-      <ShowInSummary>false</ShowInSummary>
-      <HtmlEncode>true</HtmlEncode>
-      <FormatOnClient>true</FormatOnClient>
-      <SearchOnStart>false</SearchOnStart>
-      <AutoSelect>false</AutoSelect>
-      <ItemsLetters>false</ItemsLetters>
-      <AllowQBE>true</AllowQBE>
-      <AllowSorting>true</AllowSorting>
-      <MaskType>None</MaskType>
-      <AllowLEV>false</AllowLEV>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:20:00">
-    <controller name="Organization" />
-    <view id="createForm1" />
-    <move>
-      <controller name="Organization" />
-      <field name="OwnerEmail" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:20:00">
-    <controller name="Organization" />
-    <view id="createForm1" />
-    <move>
-      <controller name="Organization" />
-      <field name="OwnerPassword" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:20:00">
-    <controller name="Organization" />
-    <view id="createForm1" />
-    <move>
-      <controller name="Organization" />
-      <field name="OwnerPasswordConfirmation" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:20:30">
-    <controller name="Organization" />
-    <view id="createForm1" />
-    <dataField fieldName="OwnerEmail" />
-    <update>
-      <Rows />
-      <Hidden>false</Hidden>
-      <DataViewShowInSummary>false</DataViewShowInSummary>
-    </update>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:20:47">
-    <controller name="Organization" />
-    <view id="createForm1" />
-    <dataField fieldName="OwnerPassword" />
-    <update>
-      <Rows />
-      <TextMode>Password</TextMode>
-      <Hidden>false</Hidden>
-      <DataViewShowInSummary>false</DataViewShowInSummary>
-    </update>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:20:57">
-    <controller name="Organization" />
-    <view id="createForm1" />
-    <dataField fieldName="OwnerPasswordConfirmation" />
-    <update>
-      <Rows />
-      <TextMode>Password</TextMode>
-      <Hidden>false</Hidden>
-      <DataViewShowInSummary>false</DataViewShowInSummary>
-    </update>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:21:56">
-    <controller name="Organization" />
-    <insert type="rule">
-      <Type>Code</Type>
-      <CommandName>Insert</CommandName>
-      <Phase>Before</Phase>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:22:31">
-    <controller name="Organization" />
-    <insert type="rule">
-      <Type>Code</Type>
-      <CommandName>Insert</CommandName>
-      <Phase>After</Phase>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:29:08">
-    <controller name="User" />
-    <move>
-      <controller name="Receipt" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:29:29">
-    <controller name="User" />
-    <view id="editForm1" />
-    <move>
-      <controller name="User" />
-      <field name="Receipt" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-24T00:38:14">
+    <field name="OwnerPasswordConfirmation" />
+  </move>
+</c><c y="NodeSet" t="2023-06-24T00:20:30">
+  <controller name="Organization" />
+  <view id="createForm1" />
+  <dataField fieldName="OwnerEmail" />
+  <update>
+    <Rows />
+    <Hidden>false</Hidden>
+    <DataViewShowInSummary>false</DataViewShowInSummary>
+  </update>
+</c><c y="NodeSet" t="2023-06-24T00:20:47">
+  <controller name="Organization" />
+  <view id="createForm1" />
+  <dataField fieldName="OwnerPassword" />
+  <update>
+    <Rows />
+    <TextMode>Password</TextMode>
+    <Hidden>false</Hidden>
+    <DataViewShowInSummary>false</DataViewShowInSummary>
+  </update>
+</c><c y="NodeSet" t="2023-06-24T00:20:57">
+  <controller name="Organization" />
+  <view id="createForm1" />
+  <dataField fieldName="OwnerPasswordConfirmation" />
+  <update>
+    <Rows />
+    <TextMode>Password</TextMode>
+    <Hidden>false</Hidden>
+    <DataViewShowInSummary>false</DataViewShowInSummary>
+  </update>
+</c><c y="NodeSet" t="2023-06-24T00:21:56">
+  <controller name="Organization" />
+  <insert type="rule">
+    <Type>Code</Type>
+    <CommandName>Insert</CommandName>
+    <Phase>Before</Phase>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T00:22:31">
+  <controller name="Organization" />
+  <insert type="rule">
+    <Type>Code</Type>
+    <CommandName>Insert</CommandName>
+    <Phase>After</Phase>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T00:29:08">
+  <controller name="User" />
+  <move>
     <controller name="Receipt" />
-    <insert type="rule">
-      <Type>Sql</Type>
-      <CommandName>Insert</CommandName>
-      <Phase>Before</Phase>
-      <Script>set @OrganizationId = @BusinessRules_OrganizationID</Script>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T01:04:25">
+  </move>
+</c><c y="NodeSet" t="2023-06-24T00:29:29">
+  <controller name="User" />
+  <view id="editForm1" />
+  <move>
+    <controller name="User" />
+    <field name="Receipt" />
+  </move>
+</c><c y="NodeSet" t="2023-06-24T00:38:14">
+  <controller name="Receipt" />
+  <insert type="rule">
+    <Type>Sql</Type>
+    <CommandName>Insert</CommandName>
+    <Phase>Before</Phase>
+    <Script>set @OrganizationId = @BusinessRules_OrganizationID</Script>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T01:04:25">
+  <controller name="MyProfile" />
+  <insert type="view">
+    <ViewId>agreeForm</ViewId>
+    <Type>Form</Type>
+    <Legend>false</Legend>
+    <Label>agree Form</Label>
+    <ShowInSelector>true</ShowInSelector>
+    <ReportTemplate>false</ReportTemplate>
+  </insert>
+</c><c y="NodeSet" t="2023-06-24T01:06:32">
+  <controller name="MyProfile" />
+  <view id="agreeForm" />
+  <move>
     <controller name="MyProfile" />
-    <insert type="view">
-      <ViewId>agreeForm</ViewId>
-      <Type>Form</Type>
-      <Legend>false</Legend>
-      <Label>agree Form</Label>
-      <ShowInSelector>true</ShowInSelector>
-      <ReportTemplate>false</ReportTemplate>
-    </insert>
-  </c>
-  <c y="NodeSet" t="2023-06-24T01:06:32">
-    <controller name="MyProfile" />
-    <view id="agreeForm" />
-    <move>
-      <controller name="MyProfile" />
-      <field name="UserName" />
-    </move>
-  </c>
-  <c y="NodeSet" t="2023-06-24T01:44:03">
-    <controller name="MyProfile" />
-    <insert type="rule">
-      <Type>Sql</Type>
-      <CommandName>Custom</CommandName>
-      <CommandArgument>Agree</CommandArgument>
-      <View>agreeForm</View>
-      <Phase>Execute</Phase>
-      <Script>update User
+    <field name="UserName" />
+  </move>
+</c><c y="NodeSet" t="2023-06-24T01:44:03">
+  <controller name="MyProfile" />
+  <insert type="rule">
+    <Type>Sql</Type>
+    <CommandName>Custom</CommandName>
+    <CommandArgument>Agree</CommandArgument>
+    <View>agreeForm</View>
+    <Phase>Execute</Phase>
+    <Script>update User
 set Comment = 'EULAAccepted'
 where Id = @BusinessRules_UserId</Script>
-    </insert>
-  </c>
-</log>
+  </insert>
+</c></log>

@@ -638,12 +638,9 @@ from "dbo"."Organization" "Organization"
             <dataFields>
               <dataField fieldName="ID" columns="15" />
               <dataField fieldName="Name" columns="50" />
-              <dataField fieldName="OwnerEmail">
-              </dataField>
-              <dataField fieldName="OwnerPassword" textMode="Password">
-              </dataField>
-              <dataField fieldName="OwnerPasswordConfirmation" textMode="Password">
-              </dataField>
+              <dataField fieldName="OwnerEmail"></dataField>
+              <dataField fieldName="OwnerPassword" textMode="Password"></dataField>
+              <dataField fieldName="OwnerPasswordConfirmation" textMode="Password"></dataField>
             </dataFields>
           </category>
         </categories>
