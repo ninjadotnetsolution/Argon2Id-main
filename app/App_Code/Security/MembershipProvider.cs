@@ -109,6 +109,7 @@ namespace Argon2Id.Security
 
         static ApplicationMembershipProviderBase()
         {
+
             Statements[MembershipProviderSqlStatement.ChangePassword] = "update [User] set Password = @Password where User_Name = @UserName";
             Statements[MembershipProviderSqlStatement.ChangePasswordQuestionAndAnswer] = "update [User] set Column_users_passwordquestion_IsNotMapped = @PasswordQuestion, Column_users_passwordanswer_IsNotMapped = @PasswordAnswer where User_Name = @UserName";
             Statements[MembershipProviderSqlStatement.CreateUser] = "\r\ninsert into [User]\r\n(\r\n   User_Name\r\n  ,Password\r\n  ,eMail\r\n)\r\nvalues(\r\n   @UserName\r\n  ,@Password\r\n  ,@Email\r\n)";
@@ -131,7 +132,6 @@ namespace Argon2Id.Security
             Statements[MembershipProviderSqlStatement.FindUsersByName] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom [User] \r\nwhere User_Name like @UserName\r\norder by User_Name asc";
             Statements[MembershipProviderSqlStatement.CountUsersByEmail] = "select count(*) from [User] where eMail like @Email";
             Statements[MembershipProviderSqlStatement.FindUsersByEmail] = "\r\nselect \r\n   Id UserID\r\n  ,User_Name Username\r\n  ,eMail Email\r\nfrom [User] \r\nwhere eMail like @Email\r\norder by User_Name asc";
-
 
         }
 
@@ -387,7 +387,6 @@ namespace Argon2Id.Security
                     sql.AssignParameter("UserName", username);
                     sql.AssignParameter("Password", EncodePassword(password));
                     sql.AssignParameter("Email", email);
-                    sql.AssignParameter("Login", creationDate);
                     if (sql.ExecuteNonQuery() > 0)
                     {
                         status = MembershipCreateStatus.Success;

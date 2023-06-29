@@ -1469,7 +1469,7 @@ namespace Argon2Id.Services
             {
                 var key = ConfigurationManager.AppSettings["MembershipProviderValidationKey"];
                 if (string.IsNullOrEmpty(key) || key.Contains("AutoGenerate"))
-                    key = "C65E3D9021B71EBE80CD0CEDBB0CAED6AE5E84240A5B2C7A67EED6F291DBC7FE9F8139589FD9F38F9F75F7C36E2AB6A52F90CB17645EA8334929F46006A4AA4E";
+                    key = "3ED4B3255F145239ECED67DE46FD767D5EB003291CFB39C3A14E0983ECBC7FF8A3AA3A18E6152099B8DDD36A3BA68C5A01CB5381773E2F253AA21A86360F364F";
                 return key;
             }
         }

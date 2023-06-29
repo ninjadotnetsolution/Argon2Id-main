@@ -7,6 +7,7 @@ select
 	"User"."Id" "ID"
 	,"User"."ManagerId" "ManagerID"
 	,"Manager"."Login" "ManagerLogin"
+	,"ManagerOrganization"."Name" "ManagerOrganizationName"
 	,"ManagerBranch"."Name" "ManagerBranchName"
 	,"User"."BranchId" "BranchID"
 	,"Branch"."Name" "BranchName"
@@ -41,12 +42,15 @@ select
 	,"User"."ModifiedBy" "ModifiedBy"
 	,"User"."ValidFrom" "ValidFrom"
 	,"User"."ValidTo" "ValidTo"
+	,"User"."OrganizationId" "OrganizationID"
+	,"Organization"."Name" "OrganizationName"
 	,"User"."comment" "Comment"
-	,"User"."OrganizationId" "OrganizationId"
 from "dbo"."User" "User"
 	left join "dbo"."User" "Manager" on "User"."ManagerId" = "Manager"."Id"
+	left join "dbo"."Organization" "ManagerOrganization" on "Manager"."OrganizationId" = "ManagerOrganization"."Id"
 	left join "dbo"."Branch" "ManagerBranch" on "Manager"."BranchId" = "ManagerBranch"."Id"
 	left join "dbo"."Branch" "Branch" on "User"."BranchId" = "Branch"."Id"
+	left join "dbo"."Organization" "Organization" on "User"."OrganizationId" = "Organization"."Id"
 ]]></text>
     </command>
     <command id="IdUniqueIdentifierCommand" type="Text" event="Inserting">
@@ -59,9 +63,10 @@ from "dbo"."User" "User"
   <fields>
     <field name="ID" type="Guid" allowNulls="false" isPrimaryKey="true" default="(CONVERT([uniqueidentifier],CONVERT([binary](10),newid())+CONVERT([binary](6),datediff_big(millisecond,'1970-1-1',getutcdate()))))" label="Id" />
     <field name="ManagerID" type="Guid" label="Manager Id" showInSummary="true">
-      <items style="Lookup" dataController="User" newDataView="createForm1" dataValueField="ID" dataTextField="ManagerLogin" copy="ManagerBranchName=ManagerBranchName" />
+      <items style="Lookup" dataController="User" newDataView="createForm1" dataValueField="ID" dataTextField="ManagerLogin" copy="ManagerOrganizationName=ManagerOrganizationName, ManagerBranchName=ManagerBranchName" />
     </field>
     <field name="ManagerLogin" type="String" readOnly="true" label="Manager Login" length="128" />
+    <field name="ManagerOrganizationName" type="String" readOnly="true" label="Manager Organization Name" length="50" />
     <field name="ManagerBranchName" type="String" readOnly="true" label="Manager Branch Name" length="128" />
     <field name="BranchID" type="Guid" label="Branch Id" showInSummary="true">
       <items style="Lookup" dataController="Branch" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
@@ -69,6 +74,7 @@ from "dbo"."User" "User"
     <field name="BranchName" type="String" readOnly="true" label="Branch Name" length="128" />
     <field name="Login" type="String" allowNulls="false" default="('')" label="Login" length="128" showInSummary="true" />
     <field name="Password" type="String" allowNulls="false" label="Password" length="128" />
+    <field name="PasswordConfirmation" type="String" label="Password Confirmation" isVirtual="true" length="128" />
     <field name="EMail" type="String" label="e Mail" length="256" showInSummary="true" />
     <field name="Description" type="String" label="Description" length="256" showInSummary="true" />
     <field name="PasswordQuestion" type="String" label="Password Question" length="256" />
@@ -98,14 +104,13 @@ from "dbo"."User" "User"
     <field name="ModifiedBy" type="String" allowNulls="false" default="(suser_sname())" label="Modified By" length="128" />
     <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" readOnly="true" />
     <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" readOnly="true" />
-    <field name="Comment" type="String" allowQBE="false" allowSorting="false" label="Comment" />
-    <field name="OrganizationId" type="Guid" label="Organization Id" />
-    <field name="Roles" type="String" label="Roles">
-      <items style="CheckBoxList" dataController="Role" targetController="HistorydboUserRole" />
+    <field name="OrganizationID" type="Guid" label="Organization Id">
+      <items style="Lookup" dataController="Organization" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
     </field>
-    <field name="PasswordConfirmation" type="String" label="Password Confirmation" isVirtual="true" length="50" />
-    <field name="Receipt" type="DataView" label="Receipt">
-      <dataView controller="Receipt" view="grid1" />
+    <field name="OrganizationName" type="String" readOnly="true" label="Organization Name" length="50" />
+    <field name="Comment" type="String" allowQBE="false" allowSorting="false" label="Comment" />
+    <field name="Roles" type="String" label="Roles" isVirtual="true">
+      <items style="CheckBoxList" dataController="Role" targetController="UserRole" />
     </field>
   </fields>
   <views>
@@ -113,6 +118,7 @@ from "dbo"."User" "User"
       <headerText>$DefaultGridViewDescription</headerText>
       <dataFields>
         <dataField fieldName="ManagerID" aliasFieldName="ManagerLogin" />
+        <dataField fieldName="ManagerOrganizationName" columns="50" />
         <dataField fieldName="ManagerBranchName" />
         <dataField fieldName="BranchID" aliasFieldName="BranchName" />
         <dataField fieldName="Login" />
@@ -146,8 +152,8 @@ from "dbo"."User" "User"
         <dataField fieldName="ModifiedBy" />
         <dataField fieldName="ValidFrom" columns="10" />
         <dataField fieldName="ValidTo" columns="10" />
+        <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
         <dataField fieldName="Comment" rows="5" />
-        <dataField fieldName="OrganizationId" columns="15" />
       </dataFields>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review User">
@@ -157,11 +163,12 @@ from "dbo"."User" "User"
           <description><![CDATA[$DefaultEditDescription]]></description>
           <dataFields>
             <dataField fieldName="ManagerID" aliasFieldName="ManagerLogin" />
+            <dataField fieldName="ManagerOrganizationName" columns="50" />
             <dataField fieldName="ManagerBranchName" />
             <dataField fieldName="BranchID" aliasFieldName="BranchName" />
             <dataField fieldName="Login" />
             <dataField fieldName="Password" textMode="Password" />
-            <dataField fieldName="PasswordConfirmation" columns="50" />
+            <dataField fieldName="PasswordConfirmation" textMode="Password" />
             <dataField fieldName="EMail" />
             <dataField fieldName="Description" />
             <dataField fieldName="PasswordQuestion" />
@@ -191,10 +198,9 @@ from "dbo"."User" "User"
             <dataField fieldName="ModifiedBy" />
             <dataField fieldName="ValidFrom" columns="10" />
             <dataField fieldName="ValidTo" columns="10" />
+            <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
             <dataField fieldName="Comment" rows="5" />
-            <dataField fieldName="OrganizationId" columns="15" />
             <dataField fieldName="Roles" rows="5" />
-            <dataField fieldName="Receipt" columns="15" />
           </dataFields>
         </category>
       </categories>
@@ -206,11 +212,12 @@ from "dbo"."User" "User"
           <description><![CDATA[$DefaultNewDescription]]></description>
           <dataFields>
             <dataField fieldName="ManagerID" aliasFieldName="ManagerLogin" />
+            <dataField fieldName="ManagerOrganizationName" columns="50" />
             <dataField fieldName="ManagerBranchName" />
             <dataField fieldName="BranchID" aliasFieldName="BranchName" />
             <dataField fieldName="Login" />
             <dataField fieldName="Password" textMode="Password" />
-            <dataField fieldName="PasswordConfirmation" columns="50" />
+            <dataField fieldName="PasswordConfirmation" textMode="Password" />
             <dataField fieldName="EMail" />
             <dataField fieldName="Description" />
             <dataField fieldName="PasswordQuestion" />
@@ -240,8 +247,8 @@ from "dbo"."User" "User"
             <dataField fieldName="ModifiedBy" />
             <dataField fieldName="ValidFrom" columns="10" />
             <dataField fieldName="ValidTo" columns="10" />
+            <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
             <dataField fieldName="Comment" rows="5" />
-            <dataField fieldName="OrganizationId" columns="15" />
             <dataField fieldName="Roles" rows="5" />
           </dataFields>
         </category>

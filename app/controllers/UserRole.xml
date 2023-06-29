@@ -6,6 +6,7 @@
 select
 	"UserRole"."UserId" "UserID"
 	,"User"."Login" "UserLogin"
+	,"UserOrganization"."Name" "UserOrganizationName"
 	,"UserBranch"."Name" "UserBranchName"
 	,"UserRole"."RoleId" "RoleID"
 	,"Role"."Name" "RoleName"
@@ -24,6 +25,7 @@ select
 	,"UserRole"."ValidTo" "ValidTo"
 from "dbo"."UserRole" "UserRole"
 	left join "dbo"."User" "User" on "UserRole"."UserId" = "User"."Id"
+	left join "dbo"."Organization" "UserOrganization" on "User"."OrganizationId" = "UserOrganization"."Id"
 	left join "dbo"."Branch" "UserBranch" on "User"."BranchId" = "UserBranch"."Id"
 	left join "dbo"."Role" "Role" on "UserRole"."RoleId" = "Role"."Id"
 ]]></text>
@@ -31,9 +33,10 @@ from "dbo"."UserRole" "UserRole"
   </commands>
   <fields>
     <field name="UserID" type="Guid" allowNulls="false" isPrimaryKey="true" label="User Id" showInSummary="true">
-      <items style="Lookup" dataController="User" newDataView="createForm1" dataValueField="ID" dataTextField="ManagerLogin" copy="UserBranchName=ManagerBranchName" />
+      <items style="Lookup" dataController="User" newDataView="createForm1" dataValueField="ID" dataTextField="ManagerLogin" copy="UserOrganizationName=ManagerOrganizationName, UserBranchName=ManagerBranchName" />
     </field>
     <field name="UserLogin" type="String" readOnly="true" label="User Login" length="128" />
+    <field name="UserOrganizationName" type="String" readOnly="true" label="User Organization Name" length="50" />
     <field name="UserBranchName" type="String" readOnly="true" label="User Branch Name" length="128" />
     <field name="RoleID" type="Guid" allowNulls="false" isPrimaryKey="true" label="Role Id" showInSummary="true">
       <items style="Lookup" dataController="Role" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
@@ -58,6 +61,7 @@ from "dbo"."UserRole" "UserRole"
       <headerText>$DefaultGridViewDescription</headerText>
       <dataFields>
         <dataField fieldName="UserID" aliasFieldName="UserLogin" />
+        <dataField fieldName="UserOrganizationName" columns="50" />
         <dataField fieldName="UserBranchName" />
         <dataField fieldName="RoleID" aliasFieldName="RoleName" />
         <dataField fieldName="RowVersion" columns="15" />
@@ -82,6 +86,7 @@ from "dbo"."UserRole" "UserRole"
           <description><![CDATA[$DefaultEditDescription]]></description>
           <dataFields>
             <dataField fieldName="UserID" aliasFieldName="UserLogin" />
+            <dataField fieldName="UserOrganizationName" columns="50" />
             <dataField fieldName="UserBranchName" />
             <dataField fieldName="RoleID" aliasFieldName="RoleName" />
             <dataField fieldName="RowVersion" columns="15" />
@@ -108,6 +113,7 @@ from "dbo"."UserRole" "UserRole"
           <description><![CDATA[$DefaultNewDescription]]></description>
           <dataFields>
             <dataField fieldName="UserID" aliasFieldName="UserLogin" />
+            <dataField fieldName="UserOrganizationName" columns="50" />
             <dataField fieldName="UserBranchName" />
             <dataField fieldName="RoleID" aliasFieldName="RoleName" />
             <dataField fieldName="RowVersion" columns="15" />

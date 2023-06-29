@@ -11,7 +11,7 @@ using Argon2Id.Security;
 
 namespace Argon2Id.Rules
 {
-    public partial class OrganizationBusinessRules : Argon2Id.Rules.SharedBusinessRules
+    public partial class OrganizationBusinessRules : SharedBusinessRules
     {
 
         /// <summary>This method will execute in any view before an action

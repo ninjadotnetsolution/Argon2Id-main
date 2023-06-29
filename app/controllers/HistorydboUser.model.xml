@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataModel baseSchema="History-dbo" baseTable="User" alias="User" created="2023-06-14T19:54:54" modified="2023-06-14T19:55:15" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+<dataModel baseSchema="History-dbo" baseTable="User" alias="User" created="2023-06-29T20:04:41" modified="2023-06-29T20:04:43" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
   <foreignKeys />
   <columns>
     <column name="Id" fieldName="ID" label="Id" />
@@ -36,5 +36,7 @@
     <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
     <column name="ValidFrom" fieldName="ValidFrom" label="Valid From" />
     <column name="ValidTo" fieldName="ValidTo" label="Valid To" />
+    <column name="OrganizationId" fieldName="OrganizationID" label="Organization Id" />
+    <column name="comment" fieldName="Comment" label="Comment" />
   </columns>
 </dataModel>

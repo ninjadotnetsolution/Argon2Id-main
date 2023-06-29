@@ -1,5 +1,5 @@
 <application snapshot="false" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model">
-  <pages xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+  <pages>
     <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
       <containers>
         <container id="container1" flow="NewRow" />
@@ -10,107 +10,7 @@
         <control id="control2" name="Welcome" container="container2" />
       </controls>
     </page>
-    <page name="UserRole" title="User Role" description="View User Role" index="1010" path="User Role">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="UserRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows user role management.</about>
-    </page>
-    <page name="Role" title="Role" description="View Role" index="1020" path="Role">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="Role" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
-      </dataViews>
-      <controls />
-      <about>This page allows role management.</about>
-    </page>
-    <page name="Branch" title="Branch" description="View Branch" index="1030" path="Branch">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="Branch" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
-      </dataViews>
-      <controls />
-      <about>This page allows branch management.</about>
-    </page>
-    <page name="User" title="User" description="View User" index="1040" path="User">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="User" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
-      </dataViews>
-      <controls />
-      <about>This page allows user management.</about>
-    </page>
-    <page name="HistorydboBranch" title="Historydbo Branch" description="View Historydbo Branch" index="1050" path="Historydbo Branch">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="HistorydboBranch" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows historydbo branch management.</about>
-    </page>
-    <page name="HistorydboAccount" title="Historydbo Account" description="View Historydbo Account" index="1060" path="Historydbo Account">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="HistorydboAccount" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows historydbo account management.</about>
-    </page>
-    <page name="HistorydboRole" title="Historydbo Role" description="View Historydbo Role" index="1070" path="Historydbo Role">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="HistorydboRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows historydbo role management.</about>
-    </page>
-    <page name="HistorydboSiteContent" title="Historydbo Site Content" description="View Historydbo Site Content" index="1080" path="Historydbo Site Content">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="HistorydboSiteContent" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows historydbo site content management.</about>
-    </page>
-    <page name="HistorydboUser" title="Historydbo User" description="View Historydbo User" index="1090" path="Historydbo User">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="HistorydboUser" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows historydbo user management.</about>
-    </page>
-    <page name="HistorydboUserRole" title="Historydbo User Role" description="View Historydbo User Role" index="1100" path="Historydbo User Role">
-      <containers>
-        <container id="container1" flow="NewRow" />
-      </containers>
-      <dataViews>
-        <dataView id="view1" controller="HistorydboUserRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
-      </dataViews>
-      <controls />
-      <about>This page allows historydbo user role management.</about>
-    </page>
-    <page name="Account" title="Account" description="View Account" index="1110" path="Account">
+    <page name="Account" title="Account" description="View Account" index="1010" path="Account">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -120,17 +20,17 @@
       <controls />
       <about>This page allows account management.</about>
     </page>
-    <page name="Receipt" title="Receipt" description="View Receipt" index="1120" path="Receipt">
+    <page name="UserRole" title="User Role" description="View User Role" index="1020" path="User Role">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
       <dataViews>
-        <dataView id="view1" controller="Receipt" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+        <dataView id="view1" controller="UserRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
       </dataViews>
       <controls />
-      <about>This page allows receipt management.</about>
+      <about>This page allows user role management.</about>
     </page>
-    <page name="Organization" title="Organization" description="View Organization" index="1130" path="Organization">
+    <page name="Organization" title="Organization" description="View Organization" index="1030" path="Organization">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -140,27 +40,107 @@
       <controls />
       <about>This page allows organization management.</about>
     </page>
-    <page name="Organization1" title="Organization1" description="View Organization1" index="1140" path="Organization1">
+    <page name="Role" title="Role" description="View Role" index="1040" path="Role">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
       <dataViews>
-        <dataView id="view1" controller="Organization1" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+        <dataView id="view1" controller="Role" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
       </dataViews>
       <controls />
-      <about>This page allows organization1 management.</about>
+      <about>This page allows role management.</about>
     </page>
-    <page name="Receipt1" title="Receipt1" description="View Receipt1" index="1150" path="Receipt1">
+    <page name="Branch" title="Branch" description="View Branch" index="1050" path="Branch">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
       <dataViews>
-        <dataView id="view1" controller="Receipt1" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+        <dataView id="view1" controller="Branch" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
       </dataViews>
       <controls />
-      <about>This page allows receipt1 management.</about>
+      <about>This page allows branch management.</about>
     </page>
-    <page name="SiteContent" title="Site Content" description="View Site Content" index="1160" path="Site Content" roles="Administrators, Content Editors, Developers">
+    <page name="User" title="User" description="View User" index="1060" path="User">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="User" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows user management.</about>
+    </page>
+    <page name="HistorydboUserRole" title="Historydbo User Role" description="View Historydbo User Role" index="1070" path="Historydbo User Role">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboUserRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo user role management.</about>
+    </page>
+    <page name="HistorydboUser" title="Historydbo User" description="View Historydbo User" index="1080" path="Historydbo User">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboUser" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo user management.</about>
+    </page>
+    <page name="HistorydboSiteContent" title="Historydbo Site Content" description="View Historydbo Site Content" index="1090" path="Historydbo Site Content">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboSiteContent" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo site content management.</about>
+    </page>
+    <page name="HistorydboRole" title="Historydbo Role" description="View Historydbo Role" index="1100" path="Historydbo Role">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboRole" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo role management.</about>
+    </page>
+    <page name="HistorydboBranch" title="Historydbo Branch" description="View Historydbo Branch" index="1110" path="Historydbo Branch">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboBranch" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo branch management.</about>
+    </page>
+    <page name="HistorydboAccount" title="Historydbo Account" description="View Historydbo Account" index="1120" path="Historydbo Account">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HistorydboAccount" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows historydbo account management.</about>
+    </page>
+    <page name="Receipt" title="Receipt" description="View Receipt" index="1130" path="Receipt">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Receipt" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows receipt management.</about>
+    </page>
+    <page name="SiteContent" title="Site Content" description="View Site Content" index="1140" path="Site Content" roles="Administrators, Content Editors, Developers">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>

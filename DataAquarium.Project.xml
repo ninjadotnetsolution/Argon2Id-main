@@ -2,14 +2,14 @@
   This file is provided to store the settings for your Data Aquarium project. 
   You can safely delete this file if no further code generation is planned.
 -->
-<project compatibility="20111118" dataModel="required" appFolder="app" displayName="Argon2Id" group="" type="Web Site Factory" sourceControl="git" subscriptionLevel="Unlimited" name="Argon2Id" prettyName="Argon 2Id" appGenVersion="8.9.28.0" codeDomProvider="CSharp" targetFramework="4.7.2" userInterface="TouchUI" pageImplementation="html" databaseChanged="true" xmlns="urn:schemas-codeontime-com:data-aquarium-project">
+<project compatibility="20111118" dataModel="required" appFolder="app" displayName="Argon2Id" group="" type="Web Site Factory" sourceControl="git" subscriptionLevel="Unlimited" name="Argon2Id" prettyName="Argon 2Id" appGenVersion="8.9.28.0" codeDomProvider="CSharp" targetFramework="4.7.2" userInterface="TouchUI" pageImplementation="html" xmlns="urn:schemas-codeontime-com:data-aquarium-project">
   <connectionString hostDatabaseSharing="false" sessionStateMode="None">Data Source=DESKTOP-4VRSISD;Initial Catalog=Argon2Id;Integrated Security=True;</connectionString>
   <providerName>System.Data.SqlClient</providerName>
   <namespace>Argon2Id</namespace>
-  <webServer run="true" port="56838" preview="Browser" client="">
+  <webServer run="true" port="29912" preview="Browser" client="">
     <webConfig></webConfig>
   </webServer>
-  <features useSaveAndNew="true" pageHeader="" copyright="" annotations="false" annotationsPath="" newColumn="true" floating="false" maxGridFields="100" multiSelect="false" batchEdit="false" advancedSearch="false" advancedLookup="false" relationshipExplorer="false" enablePermalinks="false" enableHistory="false" enableTransactions="false" showModalForms="true" tabViewSelection="10">
+  <features useSaveAndNew="true" pageHeader="" copyright="" annotations="false" annotationsPath="" newColumn="true" floating="false" maxGridFields="100" multiSelect="false" batchEdit="false" advancedSearch="false" advancedLookup="false" relationshipExplorer="false" enablePermalinks="false" enableHistory="false" enableTransactions="false" showModalForms="true" tabViewSelection="0">
     <navigation detectUnderscoreSeparatedSchema="" />
     <blob allowUploadOnInsert="true" />
     <framework scriptOnly="true" useExtenders="false" />
@@ -17,7 +17,7 @@
     <touch desktopDisplayDensity="Condensed" mobileDisplayDensity="Auto" transitions="" sidebar="Landscape" labelsInList="DisplayedBelow" initialListMode="SeeAll" menu="toolbar" promoteActions="true" smartDates="true" mapApiIdentifier="" mapApiIdentifierMobile="" />
     <cms searchEngine="" analysisEngine="" analysisOnDataPages="false" />
     <ease urlHashing="false">
-      <auditing>Created By User ID       = CreatedById
+      <auditing>Created By User ID       = CreatedBy
 Created On Date           = CreatedOn</auditing>
     </ease>
     <packageProperties></packageProperties>
@@ -27,14 +27,14 @@ Created On Date           = CreatedOn</auditing>
   <reports enabled="true" version="15" />
   <host path="" url="" />
   <databaseObjectFilter generate="ControllersAndPages"></databaseObjectFilter>
-  <bll normalizeModelNames="true" discoveryDepth="3" labelFormatExpression="" selectMethod="Select" selectSingleMethod="SelectSingle" insertMethod="Insert" updateMethod="Update" deleteMethod="Delete" generateSharedBusinessRules="true" includeViews="true" tabViewSelection="0">
+  <bll normalizeModelNames="true" discoveryDepth="3" labelFormatExpression="" selectMethod="Select" selectSingleMethod="SelectSingle" insertMethod="Insert" updateMethod="Update" deleteMethod="Delete" generateSharedBusinessRules="true" includeViews="true" tabViewSelection="1">
     <fieldMap></fieldMap>
     <keys></keys>
     <fieldsToIgnore></fieldsToIgnore>
     <fieldsToHide></fieldsToHide>
     <customLabels></customLabels>
   </bll>
-  <membership enabled="false" providerName="System.Data.SqlClient" connectionString="" windowsAuthentication="false" activeDirectory="false" customSecurity="true" dedicatedLogin="false" displayRememberMe="true" rememberMeSet="false" displaySignUp="false" displayPasswordRecovery="false" displayMyAccount="true" displayHelp="true" idleUserDetectionTimeout="-1" tabViewSelection="0" validationKey="C65E3D9021B71EBE80CD0CEDBB0CAED6AE5E84240A5B2C7A67EED6F291DBC7FE9F8139589FD9F38F9F75F7C36E2AB6A52F90CB17645EA8334929F46006A4AA4E">
+  <membership enabled="false" providerName="System.Data.SqlClient" connectionString="" windowsAuthentication="false" activeDirectory="false" customSecurity="true" dedicatedLogin="false" displayRememberMe="true" rememberMeSet="false" displaySignUp="false" displayPasswordRecovery="false" displayMyAccount="true" displayHelp="true" idleUserDetectionTimeout="-1" tabViewSelection="2" validationKey="3ED4B3255F145239ECED67DE46FD767D5EB003291CFB39C3A14E0983ECBC7FF8A3AA3A18E6152099B8DDD36A3BA68C5A01CB5381773E2F253AA21A86360F364F">
     <adConfig></adConfig>
     <config>table Users = User
 column [uiid] UserID = Id

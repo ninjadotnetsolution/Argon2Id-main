@@ -10,7 +10,7 @@ using Argon2Id.Models;
 
 namespace Argon2Id.Rules
 {
-    public partial class RoleBusinessRules : Argon2Id.Rules.SharedBusinessRules
+    public partial class RoleBusinessRules : SharedBusinessRules
     {
 
         /// <summary>This method will execute in any view before an action

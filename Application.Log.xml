@@ -1,71 +1,85 @@
-﻿<?xml version="1.0" encoding="utf-8"?><log xmlns:aquarium="urn:schemas-codeontime-com:data-aquarium" xmlns:app="urn:schemas-codeontime-com:data-aquarium-application" xmlns:a="urn:schemas-codeontime-com:data-aquarium" xmlns="urn:schemas-codeontime-com:xml-builder"><c y="NodeSet" t="2023-06-23T07:15:07">
-  <pages />
-  <insert type="page">
-    <Name>System</Name>
-    <Url>about:blank</Url>
-    <Generate>Always</Generate>
-    <UseExtenders>false</UseExtenders>
-    <Offline>false</Offline>
-    <Kiosk>false</Kiosk>
-    <Path>System</Path>
-    <Title>System</Title>
-    <Roles>*</Roles>
-  </insert>
-</c><c y="NodeSet" t="2023-06-23T07:15:15">
-  <page name="System" />
-  <move>
-    <page name="UserRole" />
-  </move>
-</c><c y="NodeSet" t="2023-06-23T07:15:15">
-  <page name="System" />
-  <move>
+<log xmlns="urn:schemas-codeontime-com:xml-builder" xmlns:aquarium="urn:schemas-codeontime-com:data-aquarium" xmlns:app="urn:schemas-codeontime-com:data-aquarium-application" xmlns:a="urn:schemas-codeontime-com:data-aquarium">
+  <c y="NodeSet" t="2023-06-29T20:25:18">
+    <pages />
+    <insert type="page">
+      <Name>System</Name>
+      <Url>about:blank</Url>
+      <Generate>Always</Generate>
+      <UseExtenders>false</UseExtenders>
+      <Offline>false</Offline>
+      <Kiosk>false</Kiosk>
+      <Path>System</Path>
+      <Title>System</Title>
+      <Roles>Administrators</Roles>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2023-06-29T20:28:12">
+    <page name="System" />
+    <move>
+      <page name="Role" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2023-06-29T20:28:12">
+    <page name="System" />
+    <move>
+      <page name="UserRole" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2023-06-29T20:33:45">
     <page name="Role" />
-  </move>
-</c><c y="NodeSet" t="2023-06-24T00:13:41">
-  <page name="System" />
-  <update>
-    <Roles>Administrators</Roles>
-  </update>
-</c><c y="NodeSet" t="2023-06-24T00:15:17">
-  <page name="UserRole" />
-  <update>
-    <UseExtenders>false</UseExtenders>
-    <Offline>false</Offline>
-    <Kiosk>false</Kiosk>
-    <Roles>Administrators</Roles>
-  </update>
-</c><c y="NodeSet" t="2023-06-24T00:15:27">
-  <page name="Role" />
-  <update>
-    <UseExtenders>false</UseExtenders>
-    <Offline>false</Offline>
-    <Kiosk>false</Kiosk>
-    <Roles>Administrators</Roles>
-  </update>
-</c><c y="NodeSet" t="2023-06-24T00:16:02">
-  <page name="Receipt1" />
-  <delete />
-</c><c y="NodeSet" t="2023-06-24T00:16:06">
-  <page name="Organization1" />
-  <delete />
-</c><c y="NodeSet" t="2023-06-24T00:17:00">
-  <page name="Organization" />
-  <update>
-    <UseExtenders>false</UseExtenders>
-    <Offline>false</Offline>
-    <Kiosk>false</Kiosk>
-    <Roles>Administrators</Roles>
-  </update>
-</c><c y="NodeSet" t="2023-06-24T00:50:33">
-  <pages />
-  <insert type="page">
-    <Name>EULA</Name>
-    <Generate>Always</Generate>
-    <UseExtenders>false</UseExtenders>
-    <Offline>false</Offline>
-    <Kiosk>false</Kiosk>
-    <Path>EULA</Path>
-    <Title>EULA</Title>
-    <Roles>*</Roles>
-  </insert>
-</c></log>
+    <update>
+      <UseExtenders>false</UseExtenders>
+      <Offline>false</Offline>
+      <Kiosk>false</Kiosk>
+      <Roles>Administrators</Roles>
+    </update>
+  </c>
+  <c y="NodeSet" t="2023-06-29T20:34:01">
+    <page name="UserRole" />
+    <update>
+      <UseExtenders>false</UseExtenders>
+      <Offline>false</Offline>
+      <Kiosk>false</Kiosk>
+      <Roles>Administrators</Roles>
+    </update>
+  </c>
+  <c y="NodeSet" t="2023-06-29T20:34:09">
+    <page name="Organization" />
+    <update>
+      <UseExtenders>false</UseExtenders>
+      <Offline>false</Offline>
+      <Kiosk>false</Kiosk>
+      <Roles>Administrators</Roles>
+    </update>
+  </c>
+  <c y="NodeSet" t="2023-06-29T21:50:02">
+    <pages />
+    <insert type="page">
+      <Name>EULA</Name>
+      <Template>Jumbotron</Template>
+      <Generate>Always</Generate>
+      <UseExtenders>false</UseExtenders>
+      <Offline>false</Offline>
+      <Kiosk>false</Kiosk>
+      <Path>EULA</Path>
+      <Title>EULA</Title>
+      <Roles>*</Roles>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2023-06-29T21:50:40">
+    <page name="EULA" />
+    <update>
+      <Generate>FirstTimeOnly</Generate>
+    </update>
+  </c>
+  <c y="NodeSet" t="2023-06-29T21:51:03">
+    <page name="EULA" />
+    <configure type="Exclude" />
+  </c>
+  <c y="NodeSet" t="2023-06-29T21:53:06">
+    <page name="EULA" />
+    <update>
+      <Generate>Always</Generate>
+    </update>
+  </c>
+</log>

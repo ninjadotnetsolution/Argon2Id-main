@@ -1,20 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataModel baseSchema="dbo" baseTable="User" alias="User" created="2023-06-14T19:54:27" modified="2023-06-24T01:40:54" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+<dataModel baseSchema="dbo" baseTable="User" alias="User" created="2023-06-29T20:04:35" modified="2023-06-29T20:04:37" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
   <foreignKeys>
     <foreignKey id="Manager" parentTableSchema="dbo" parentTableName="User" x="495" y="20">
       <foreignKeyColumn columnName="ManagerId" parentColumnName="Id" />
     </foreignKey>
-    <foreignKey id="ManagerBranch" parentTableSchema="dbo" parentTableName="Branch" baseForeignKey="Manager" x="785" y="20">
+    <foreignKey id="ManagerOrganization" parentTableSchema="dbo" parentTableName="Organization" baseForeignKey="Manager" x="806" y="20">
+      <foreignKeyColumn columnName="OrganizationId" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="ManagerBranch" parentTableSchema="dbo" parentTableName="Branch" baseForeignKey="Manager" x="806" y="176">
       <foreignKeyColumn columnName="BranchId" parentColumnName="Id" />
     </foreignKey>
-    <foreignKey id="Branch" parentTableSchema="dbo" parentTableName="Branch" x="495" y="227">
+    <foreignKey id="Branch" parentTableSchema="dbo" parentTableName="Branch" x="495" y="251">
       <foreignKeyColumn columnName="BranchId" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="Organization" parentTableSchema="dbo" parentTableName="Organization" x="495" y="411">
+      <foreignKeyColumn columnName="OrganizationId" parentColumnName="Id" />
     </foreignKey>
   </foreignKeys>
   <columns>
     <column name="Id" fieldName="ID" label="Id" />
     <column name="ManagerId" fieldName="ManagerID" label="Manager Id" aliasColumnName="Login" aliasForeignKey="Manager" />
     <column name="Login" fieldName="ManagerLogin" label="Manager Login" foreignKey="Manager" />
+    <column name="Name" fieldName="ManagerOrganizationName" label="Manager Organization Name" foreignKey="ManagerOrganization" />
     <column name="Name" fieldName="ManagerBranchName" label="Manager Branch Name" foreignKey="ManagerBranch" />
     <column name="BranchId" fieldName="BranchID" label="Branch Id" aliasColumnName="Name" aliasForeignKey="Branch" />
     <column name="Name" fieldName="BranchName" label="Branch Name" foreignKey="Branch" />
@@ -49,7 +56,8 @@
     <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
     <column name="ValidFrom" fieldName="ValidFrom" label="Valid From" />
     <column name="ValidTo" fieldName="ValidTo" label="Valid To" />
+    <column name="OrganizationId" fieldName="OrganizationID" label="Organization Id" aliasColumnName="Name" aliasForeignKey="Organization" />
+    <column name="Name" fieldName="OrganizationName" label="Organization Name" foreignKey="Organization" />
     <column name="comment" fieldName="Comment" label="Comment" />
-    <column name="OrganizationId" fieldName="OrganizationId" label="Organization Id" />
   </columns>
 </dataModel>

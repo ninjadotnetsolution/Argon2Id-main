@@ -15,6 +15,8 @@ namespace Argon2Id.Models
 
         ManagerLogin,
 
+        ManagerOrganizationName,
+
         ManagerBranchName,
 
         BranchID,
@@ -24,6 +26,8 @@ namespace Argon2Id.Models
         Login,
 
         Password,
+
+        PasswordConfirmation,
 
         EMail,
 
@@ -83,13 +87,13 @@ namespace Argon2Id.Models
 
         ValidTo,
 
+        OrganizationID,
+
+        OrganizationName,
+
         Comment,
 
-        OrganizationId,
-
         Roles,
-
-        PasswordConfirmation,
     }
 
     public partial class UserModel : BusinessRulesObjectModel
@@ -105,6 +109,9 @@ namespace Argon2Id.Models
         private string _managerLogin;
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _managerOrganizationName;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _managerBranchName;
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -118,6 +125,9 @@ namespace Argon2Id.Models
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _password;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _passwordConfirmation;
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _eMail;
@@ -207,16 +217,16 @@ namespace Argon2Id.Models
         private DateTime? _validTo;
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private System.Guid? _organizationID;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _organizationName;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _comment;
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
-        private System.Guid? _organizationId;
-
-        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _roles;
-
-        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
-        private string _passwordConfirmation;
 
         public UserModel()
         {
@@ -263,6 +273,19 @@ namespace Argon2Id.Models
             {
                 _managerLogin = value;
                 UpdateFieldValue("ManagerLogin", value);
+            }
+        }
+
+        public string ManagerOrganizationName
+        {
+            get
+            {
+                return _managerOrganizationName;
+            }
+            set
+            {
+                _managerOrganizationName = value;
+                UpdateFieldValue("ManagerOrganizationName", value);
             }
         }
 
@@ -328,6 +351,19 @@ namespace Argon2Id.Models
             {
                 _password = value;
                 UpdateFieldValue("Password", value);
+            }
+        }
+
+        public string PasswordConfirmation
+        {
+            get
+            {
+                return _passwordConfirmation;
+            }
+            set
+            {
+                _passwordConfirmation = value;
+                UpdateFieldValue("PasswordConfirmation", value);
             }
         }
 
@@ -708,6 +744,32 @@ namespace Argon2Id.Models
             }
         }
 
+        public System.Guid? OrganizationID
+        {
+            get
+            {
+                return _organizationID;
+            }
+            set
+            {
+                _organizationID = value;
+                UpdateFieldValue("OrganizationID", value);
+            }
+        }
+
+        public string OrganizationName
+        {
+            get
+            {
+                return _organizationName;
+            }
+            set
+            {
+                _organizationName = value;
+                UpdateFieldValue("OrganizationName", value);
+            }
+        }
+
         public string Comment
         {
             get
@@ -721,19 +783,6 @@ namespace Argon2Id.Models
             }
         }
 
-        public System.Guid? OrganizationId
-        {
-            get
-            {
-                return _organizationId;
-            }
-            set
-            {
-                _organizationId = value;
-                UpdateFieldValue("OrganizationId", value);
-            }
-        }
-
         public string Roles
         {
             get
@@ -744,19 +793,6 @@ namespace Argon2Id.Models
             {
                 _roles = value;
                 UpdateFieldValue("Roles", value);
-            }
-        }
-
-        public string PasswordConfirmation
-        {
-            get
-            {
-                return _passwordConfirmation;
-            }
-            set
-            {
-                _passwordConfirmation = value;
-                UpdateFieldValue("PasswordConfirmation", value);
             }
         }
 

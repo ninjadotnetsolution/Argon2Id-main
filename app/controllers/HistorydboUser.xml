@@ -38,6 +38,8 @@ select
 	,"User"."ModifiedBy" "ModifiedBy"
 	,"User"."ValidFrom" "ValidFrom"
 	,"User"."ValidTo" "ValidTo"
+	,"User"."OrganizationId" "OrganizationID"
+	,"User"."comment" "Comment"
 from "History-dbo"."User" "User"
 ]]></text>
     </command>
@@ -77,6 +79,8 @@ from "History-dbo"."User" "User"
     <field name="ModifiedBy" type="String" allowNulls="false" label="Modified By" length="128" />
     <field name="ValidFrom" type="DateTime" allowNulls="false" label="Valid From" />
     <field name="ValidTo" type="DateTime" allowNulls="false" label="Valid To" />
+    <field name="OrganizationID" type="Guid" label="Organization Id" />
+    <field name="Comment" type="String" allowQBE="false" allowSorting="false" label="Comment" />
   </fields>
   <views>
     <view id="grid1" type="Grid" commandId="command1" label="Historydbo User">
@@ -116,6 +120,8 @@ from "History-dbo"."User" "User"
         <dataField fieldName="ModifiedBy" />
         <dataField fieldName="ValidFrom" columns="10" />
         <dataField fieldName="ValidTo" columns="10" />
+        <dataField fieldName="OrganizationID" columns="15" />
+        <dataField fieldName="Comment" rows="5" />
       </dataFields>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review Historydbo User">
@@ -158,6 +164,8 @@ from "History-dbo"."User" "User"
             <dataField fieldName="ModifiedBy" />
             <dataField fieldName="ValidFrom" columns="10" />
             <dataField fieldName="ValidTo" columns="10" />
+            <dataField fieldName="OrganizationID" columns="15" />
+            <dataField fieldName="Comment" rows="5" />
           </dataFields>
         </category>
       </categories>
@@ -202,6 +210,8 @@ from "History-dbo"."User" "User"
             <dataField fieldName="ModifiedBy" />
             <dataField fieldName="ValidFrom" columns="10" />
             <dataField fieldName="ValidTo" columns="10" />
+            <dataField fieldName="OrganizationID" columns="15" />
+            <dataField fieldName="Comment" rows="5" />
           </dataFields>
         </category>
       </categories>

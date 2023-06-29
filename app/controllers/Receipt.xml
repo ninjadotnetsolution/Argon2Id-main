@@ -12,9 +12,17 @@ select
 	,"Receipt"."Category" "Category"
 	,"Receipt"."CreatedOn" "CreatedOn"
 	,"Receipt"."CreatedBy" "CreatedBy"
+	,"CreatedBy"."Login" "CreatedByLogin"
+	,"CreatedByOrganization"."Name" "CreatedByOrganizationName"
+	,"CreatedByBranch"."Name" "CreatedByBranchName"
 	,"Receipt"."OrganizationId" "OrganizationID"
+	,"Organization"."Name" "OrganizationName"
 	,"Receipt"."Picture" "Picture"
 from "dbo"."Receipt" "Receipt"
+	left join "dbo"."User" "CreatedBy" on "Receipt"."CreatedBy" = "CreatedBy"."Id"
+	left join "dbo"."Organization" "CreatedByOrganization" on "CreatedBy"."OrganizationId" = "CreatedByOrganization"."Id"
+	left join "dbo"."Branch" "CreatedByBranch" on "CreatedBy"."BranchId" = "CreatedByBranch"."Id"
+	left join "dbo"."Organization" "Organization" on "Receipt"."OrganizationId" = "Organization"."Id"
 ]]></text>
     </command>
   </commands>
@@ -26,8 +34,16 @@ from "dbo"."Receipt" "Receipt"
     <field name="Total" type="Decimal" allowNulls="false" dataFormatString="c" label="Total" showInSummary="true" />
     <field name="Category" type="String" label="Category" length="50" />
     <field name="CreatedOn" type="DateTime" allowNulls="false" dataFormatString="g" label="Created On" />
-    <field name="CreatedBy" type="Guid" allowNulls="false" label="Created By" />
-    <field name="OrganizationID" type="Guid" allowNulls="false" label="Organization Id" />
+    <field name="CreatedBy" type="Guid" allowNulls="false" label="Created By">
+      <items style="Lookup" dataController="User" newDataView="createForm1" dataValueField="ID" dataTextField="ManagerLogin" copy="CreatedByOrganizationName=ManagerOrganizationName, CreatedByBranchName=ManagerBranchName" />
+    </field>
+    <field name="CreatedByLogin" type="String" readOnly="true" label="Created By Login" length="128" />
+    <field name="CreatedByOrganizationName" type="String" readOnly="true" label="Created By Organization Name" length="50" />
+    <field name="CreatedByBranchName" type="String" readOnly="true" label="Created By Branch Name" length="128" />
+    <field name="OrganizationID" type="Guid" allowNulls="false" label="Organization Id">
+      <items style="Lookup" dataController="Organization" newDataView="createForm1" dataValueField="ID" dataTextField="Name" />
+    </field>
+    <field name="OrganizationName" type="String" readOnly="true" label="Organization Name" length="50" />
     <field name="Picture" type="Byte[]" onDemand="true" sourceFields="" onDemandHandler="ReceiptPicture" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Picture" />
   </fields>
   <views>
@@ -41,8 +57,10 @@ from "dbo"."Receipt" "Receipt"
         <dataField fieldName="Total" columns="15" />
         <dataField fieldName="Category" columns="50" />
         <dataField fieldName="CreatedOn" columns="20" />
-        <dataField fieldName="CreatedBy" columns="15" />
-        <dataField fieldName="OrganizationID" columns="15" />
+        <dataField fieldName="CreatedBy" aliasFieldName="CreatedByLogin" />
+        <dataField fieldName="CreatedByOrganizationName" columns="50" />
+        <dataField fieldName="CreatedByBranchName" />
+        <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
         <dataField fieldName="Picture" columns="15" />
       </dataFields>
     </view>
@@ -59,8 +77,10 @@ from "dbo"."Receipt" "Receipt"
             <dataField fieldName="Total" columns="15" />
             <dataField fieldName="Category" columns="50" />
             <dataField fieldName="CreatedOn" columns="20" />
-            <dataField fieldName="CreatedBy" columns="15" />
-            <dataField fieldName="OrganizationID" columns="15" />
+            <dataField fieldName="CreatedBy" aliasFieldName="CreatedByLogin" />
+            <dataField fieldName="CreatedByOrganizationName" columns="50" />
+            <dataField fieldName="CreatedByBranchName" />
+            <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
             <dataField fieldName="Picture" columns="15" />
           </dataFields>
         </category>
@@ -79,8 +99,10 @@ from "dbo"."Receipt" "Receipt"
             <dataField fieldName="Total" columns="15" />
             <dataField fieldName="Category" columns="50" />
             <dataField fieldName="CreatedOn" columns="20" />
-            <dataField fieldName="CreatedBy" columns="15" />
-            <dataField fieldName="OrganizationID" columns="15" />
+            <dataField fieldName="CreatedBy" aliasFieldName="CreatedByLogin" />
+            <dataField fieldName="CreatedByOrganizationName" columns="50" />
+            <dataField fieldName="CreatedByBranchName" />
+            <dataField fieldName="OrganizationID" aliasFieldName="OrganizationName" />
             <dataField fieldName="Picture" columns="15" />
           </dataFields>
         </category>
@@ -145,6 +167,7 @@ from "dbo"."Receipt" "Receipt"
     </actionGroup>
   </actions>
   <businessRules>
-    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[set @OrganizationId = @BusinessRules_OrganizationID]]></rule>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[set @OrganizationID = @BusinessRules_OrganizationId
+]]></rule>
   </businessRules>
 </dataController>

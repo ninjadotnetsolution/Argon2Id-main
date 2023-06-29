@@ -51,7 +51,7 @@ from "dbo"."Organization" "Organization"
           <dataFields>
             <dataField fieldName="ID" columns="15" />
             <dataField fieldName="Name" columns="50" />
-            <dataField fieldName="OwnerEmail" />
+            <dataField fieldName="OwnerEmail" rows="5" />
             <dataField fieldName="OwnerPassword" textMode="Password" />
             <dataField fieldName="OwnerPasswordConfirmation" textMode="Password" />
           </dataFields>

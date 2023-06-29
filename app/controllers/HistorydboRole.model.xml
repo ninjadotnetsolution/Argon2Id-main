@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataModel baseSchema="History-dbo" baseTable="Role" alias="Role" created="2023-06-14T19:54:48" modified="2023-06-14T19:55:24" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+<dataModel baseSchema="History-dbo" baseTable="Role" alias="Role" created="2023-06-29T20:04:49" modified="2023-06-29T20:04:50" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
   <foreignKeys />
   <columns>
     <column name="Id" fieldName="ID" label="Id" />

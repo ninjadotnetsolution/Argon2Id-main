@@ -10,7 +10,7 @@ using Argon2Id.Models;
 
 namespace Argon2Id.Rules
 {
-    public partial class OrganizationBusinessRules : Argon2Id.Rules.SharedBusinessRules
+    public partial class OrganizationBusinessRules : SharedBusinessRules
     {
 
         /// <summary>This method will execute in any view after an action
@@ -22,7 +22,6 @@ namespace Argon2Id.Rules
             var user = Membership.CreateUser(instance.OwnerEmail, instance.OwnerPassword, instance.OwnerEmail);
             SqlText.ExecuteNonQuery("UPDATE [User] SET OrganizationId = @q0 WHERE Id = @q1", instance.ID, user.ProviderUserKey);
             Roles.AddUserToRole(instance.OwnerEmail, "Owners");
-
         }
     }
 }

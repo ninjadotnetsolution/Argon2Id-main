@@ -21,10 +21,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "app", "app\", "{EBF4B44F-10
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "56838"
-		SlnRelativePath = "app\"
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code On Time Items", "Code On Time Items", "{8E0E17C0-D3EB-4C2C-8438-F4E7BA9ED57D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code On Time Items", "Code On Time Items", "{BAC446CA-CB8F-4345-92A8-D8ECD602FFFB}"
 	ProjectSection(SolutionItems) = preProject
 		ClientLibrary.en-GB.txt = ClientLibrary.en-GB.txt
 		DataAquarium.Project.xml = DataAquarium.Project.xml
@@ -42,8 +41,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0E5C9DEC-CE27-4E85-8BDD-012C35BC0E03}
 	EndGlobalSection
 EndGlobal

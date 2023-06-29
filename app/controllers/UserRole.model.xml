@@ -1,19 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataModel baseSchema="dbo" baseTable="UserRole" alias="UserRole" created="2023-06-14T19:54:14" modified="2023-06-14T19:54:17" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+<dataModel baseSchema="dbo" baseTable="UserRole" alias="UserRole" created="2023-06-29T20:04:22" modified="2023-06-29T20:04:24" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
   <foreignKeys>
     <foreignKey id="User" parentTableSchema="dbo" parentTableName="User" x="350" y="20">
       <foreignKeyColumn columnName="UserId" parentColumnName="Id" />
     </foreignKey>
-    <foreignKey id="UserBranch" parentTableSchema="dbo" parentTableName="Branch" baseForeignKey="User" x="640" y="20">
+    <foreignKey id="UserOrganization" parentTableSchema="dbo" parentTableName="Organization" baseForeignKey="User" x="660" y="20">
+      <foreignKeyColumn columnName="OrganizationId" parentColumnName="Id" />
+    </foreignKey>
+    <foreignKey id="UserBranch" parentTableSchema="dbo" parentTableName="Branch" baseForeignKey="User" x="660" y="160">
       <foreignKeyColumn columnName="BranchId" parentColumnName="Id" />
     </foreignKey>
-    <foreignKey id="Role" parentTableSchema="dbo" parentTableName="Role" x="350" y="227">
+    <foreignKey id="Role" parentTableSchema="dbo" parentTableName="Role" x="350" y="250">
       <foreignKeyColumn columnName="RoleId" parentColumnName="Id" />
     </foreignKey>
   </foreignKeys>
   <columns>
     <column name="UserId" fieldName="UserID" label="User Id" aliasColumnName="Login" aliasForeignKey="User" />
     <column name="Login" fieldName="UserLogin" label="User Login" foreignKey="User" />
+    <column name="Name" fieldName="UserOrganizationName" label="User Organization Name" foreignKey="UserOrganization" />
     <column name="Name" fieldName="UserBranchName" label="User Branch Name" foreignKey="UserBranch" />
     <column name="RoleId" fieldName="RoleID" label="Role Id" aliasColumnName="Name" aliasForeignKey="Role" />
     <column name="Name" fieldName="RoleName" label="Role Name" foreignKey="Role" />
